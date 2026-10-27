@@ -7,18 +7,13 @@
 <meta name="description" content="Coordinamos tu tratamiento de ortodoncia u odontología general en Barranquilla, en el Caribe colombiano, mientras vives en el exterior. Valoración por fotos con objetivo de plan escrito en 48 horas hábiles.">
 <meta name="theme-color" content="#151413">
 <meta property="og:title" content="Smile Colombia · Ortodoncia y odontología general en Barranquilla, Colombia">
-<meta property="og:description" content="Valoración por fotos en WhatsApp y objetivo de plan escrito en 48 horas hábiles, antes de comprar tiquetes.">
+<meta property="og:description" content="Valoración por fotos por correo y objetivo de plan escrito en 48 horas hábiles, antes de comprar tiquetes.">
 <meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23C43D0E'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial Narrow,Arial,sans-serif' font-weight='900' font-size='20' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
-<!--
-  Smile Colombia · Landing estática (sin build). Raíz = esta carpeta para Cloudflare Pages Direct Upload.
-  MVP en validación: precios orientativos; ver PLACEHOLDERS-MVP.md en el proyecto.
-  Contacto: mailto (WhatsApp Business pendiente). No inventar ReTHUS ni nombres de dentistas.
--->
 <style>
 :root{
   /* Tokens v2 — 1 neutro + 1 acento */
@@ -269,43 +264,50 @@ footer li{margin-bottom:var(--s2)}
 .credits ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--s2) var(--s5)}
 .credits p{margin:var(--s3) 0 0}
 @media (max-width:900px){.hero-side{margin:0 0 var(--s7)}.trip{grid-template-columns:1fr}.trip .photo img{height:auto;aspect-ratio:3/2}.cta .photo img{aspect-ratio:2/1}}
+/* v4: hero equilibrado — ficha a todo el ancho debajo */
+.hero-sheet{padding-bottom:var(--s8)}
+.hero-sheet .hero-card{margin:0;display:grid;grid-template-columns:200px 1fr;gap:var(--s5);align-items:start}
+.hero-sheet .hero-card .mono{border-bottom:0;padding:var(--s3) 0 0;margin:0}
+.hero-sheet .hero-card ul{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:0 var(--s5)}
+.hero-sheet .hero-card li{border-bottom:0;border-left:var(--bw) solid var(--hair);padding-left:var(--s4)}
+.hero-side{margin:0 0 var(--s7) var(--s6)}
+.hero-side .photo img{height:380px}
+.hero-steps{list-style:none;margin:var(--s6) 0 0;padding:0;border-top:var(--bw) solid var(--rule);max-width:52ch}
+.hero-steps li{display:grid;grid-template-columns:48px 1fr;gap:var(--s3);padding:var(--s3) 0;border-bottom:var(--bw) solid var(--hair);font-size:var(--t-sm)}
+.hero-steps .n{font-family:var(--font-mono);font-size:var(--t-mono);font-weight:700;color:var(--accent-ink);padding-top:2px}
+.hero-main{padding-bottom:var(--s7)}
+@media (max-width:900px){.hero-sheet .hero-card,.hero-sheet .hero-card ul{grid-template-columns:1fr}.hero-sheet .hero-card li{border-left:0;padding-left:0;border-bottom:var(--bw) solid var(--hair)}.hero-side{margin:0 0 var(--s6)}.hero-side .photo img{height:auto;aspect-ratio:4/3}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main"><span data-l="es">Saltar al contenido</span><span data-l="en">Skip to content</span></a>
 
-<div id="mvp-aviso" class="mvp" role="status">
-  <span data-l="es"><b>MVP en validación</b> · Precios orientativos de ejemplo (no cotización). Marca provisional. Contacto por correo mientras activamos WhatsApp Business.</span>
-  <span data-l="en"><b>MVP in validation</b> · Sample estimated prices (not a quote). Provisional brand. Email contact while we activate WhatsApp Business.</span>
+<div id="aviso" class="mvp">
+  <span data-l="es">Estamos abriendo agenda en Barranquilla. Escríbenos y recibe tu plan sin costo.</span>
+  <span data-l="en">We're opening appointments in Barranquilla. Write to us and get your plan at no cost.</span>
 </div>
 
 <header>
   <div class="wrap nav">
     <a class="logo" href="#inicio" aria-label="Smile Colombia"><span class="mark" aria-hidden="true">S</span>Smile Colombia <small>/ BAQ</small></a>
-    <nav aria-label="Principal / Main">
+    <nav aria-label="Menú principal" data-aria-es="Menú principal" data-aria-en="Main menu">
       <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5h12M2 11h12"/></svg><span data-l="es">Menú</span><span data-l="en">Menu</span></button>
       <ul class="menu" id="menu-principal">
         <li><a href="#paquetes"><span data-l="es">Paquetes</span><span data-l="en">Packages</span></a></li>
         <li><a href="#como-funciona"><span data-l="es">Cómo funciona</span><span data-l="en">How it works</span></a></li>
-        <li><a href="#garantia"><span data-l="es">Garantía</span><span data-l="en">Guarantee</span></a></li>
+        <li><a href="#garantia"><span data-l="es">Confianza</span><span data-l="en">Trust</span></a></li>
         <li><a href="#faq"><span data-l="es">Preguntas</span><span data-l="en">FAQ</span></a></li>
       </ul>
     </nav>
     <div class="nav-right">
-      <div class="lang" role="group" aria-label="Idioma / Language">
+      <div class="lang" role="group" aria-label="Idioma" data-aria-es="Idioma" data-aria-en="Language">
         <button type="button" data-set-lang="es" aria-pressed="true" lang="es">ES</button>
         <button type="button" data-set-lang="en" aria-pressed="false" lang="en">EN</button>
       </div>
-      <a class="btn btn-wa btn-sm wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Contacto</span><span data-l="en">Contact</span></a>
+      <a class="btn btn-wa btn-sm wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia"><span data-l="es">Contacto</span><span data-l="en">Contact</span></a>
     </div>
   </div>
 </header>
-<dl class="spec wrap" aria-label="Ficha / Spec">
-  <div><dt><span data-l="es">Proyecto</span><span data-l="en">Project</span></dt><dd>Smile Colombia</dd></div>
-  <div><dt><span data-l="es">Destino</span><span data-l="en">Destination</span></dt><dd>Barranquilla, Atlántico, CO</dd></div>
-  <div><dt><span data-l="es">Modelo</span><span data-l="en">Model</span></dt><dd><span data-l="es">Coordinación · mandato</span><span data-l="en">Coordination · mandate</span></dd></div>
-  <div><dt><span data-l="es">Estado</span><span data-l="en">Status</span></dt><dd><span data-l="es">MVP en validación</span><span data-l="en">MVP in validation</span></dd></div>
-</dl>
 
 <main id="main">
 
@@ -313,41 +315,46 @@ footer li{margin-bottom:var(--s2)}
 <section class="hero" id="inicio">
   <div class="wrap hero-grid">
     <div class="hero-title">
-      <span class="eyebrow"><span data-l="es">Para colombianos que viven en el exterior</span><span data-l="en">For people living abroad</span></span>
+      <span class="eyebrow"><span data-l="es">Para quienes viven fuera de Colombia</span><span data-l="en">For people living outside Colombia</span></span>
       <h1>
-        <span data-l="es">Tu plan dental en Barranquilla, antes del tiquete</span>
-        <span data-l="en">Your dental plan in Barranquilla, before you fly</span>
+        <span data-l="es">Tu sonrisa nueva en Barranquilla, con plan y precio antes de viajar</span>
+        <span data-l="en">Your new smile in Barranquilla, with a plan and price before you fly</span>
       </h1>
     </div>
     <div class="hero-main">
       <p class="lead">
-        <span data-l="es">Ortodoncia y odontología general con clínicas de Barranquilla, en el Caribe colombiano. Envíanos fotos (correo o WhatsApp cuando esté activo) y recibe tu plan y precio orientativo, con un objetivo de 48 horas hábiles desde que tengamos tus fotos completas. Aprovecha el viaje que ya tienes planeado.</span>
-        <span data-l="en">Orthodontics and general dentistry with clinics in Barranquilla, on Colombia's Caribbean coast. Send us photos (email, or WhatsApp when active) and get your plan and estimated price, with a target of 48 business hours from receiving your complete photos. Make the most of the trip you already have planned.</span>
+        <span data-l="es">Ortodoncia y odontología general con clínicas aliadas en el Caribe colombiano. Envíanos tus fotos y en un plazo objetivo de 48 horas hábiles recibes tu plan escrito.</span>
+        <span data-l="en">Orthodontics and general dentistry with partner clinics on Colombia's Caribbean coast. Send us your photos and, within a target of 48 business hours, you get your written plan.</span>
       </p>
       <div class="ctas">
-        <a class="btn btn-wa wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener">
-          <svg class="wa" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
-          <span data-l="es">Quiero mi valoración por correo</span><span data-l="en">Get my assessment by email</span>
-        <span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
+        <a class="btn btn-wa wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia">
+          <svg class="wa" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+          <span data-l="es">Quiero mi valoración gratis</span><span data-l="en">Get my free assessment</span></a>
         <a class="btn btn-ghost" href="#paquetes"><span data-l="es">Ver paquetes</span><span data-l="en">See packages</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
       </div>
       <small>
-        <span data-l="es">Valoración por fotos sin costo y sin compromiso. Precios orientativos: el precio final se confirma en la consulta presencial.</span>
-        <span data-l="en">Photo assessment at no cost and with no commitment. Prices are estimates: the final price is confirmed at your in-person visit.</span>
+        <span data-l="es">Valoración por fotos sin costo y sin compromiso. Precio de referencia; se confirma por escrito en tu valoración.</span>
+        <span data-l="en">Photo assessment at no cost and with no commitment. Reference price; confirmed in writing at your assessment.</span>
       </small>
+      <ol class="hero-steps">
+        <li><span class="n" aria-hidden="true">01</span><span data-l="es">Nos envías tus fotos y fechas de viaje</span><span data-l="en">You send your photos and travel dates</span></li>
+        <li><span class="n" aria-hidden="true">02</span><span data-l="es">Recibes tu plan escrito con precio orientativo</span><span data-l="en">You get a written plan with an estimated price</span></li>
+        <li><span class="n" aria-hidden="true">03</span><span data-l="es">Reservas tus citas y luego compras el tiquete</span><span data-l="en">You book your appointments, then your flight</span></li>
+      </ol>
     </div>
     <div class="hero-side">
-    <figure class="photo" style="--ar:4/5"><picture><source srcset="img/hero-sonrisa-brackets.webp" type="image/webp"><img src="img/hero-sonrisa-brackets.jpg" width="960" height="1200" fetchpriority="high" decoding="async" alt="Mujer sonriendo con brackets metálicos, a la luz del sol (foto ilustrativa de stock, no es una paciente)" data-alt-es="Mujer sonriendo con brackets metálicos, a la luz del sol (foto ilustrativa de stock, no es una paciente)" data-alt-en="Woman smiling with metal braces in sunlight (illustrative stock photo, not a patient)"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Sonrisa con brackets</span><span data-l="en">Smile with braces</span></span><span>Polina / Pexels</span></figcaption></figure>
-    <aside class="hero-card frame" aria-label="Resumen / Summary">
+    <figure class="photo" style="--ar:4/5"><picture><source srcset="img/hero-sonrisa-brackets.webp" type="image/webp"><img src="img/hero-sonrisa-brackets.jpg" width="960" height="1200" fetchpriority="high" decoding="async" alt="Mujer sonriendo con brackets metálicos, a la luz del sol" data-alt-es="Mujer sonriendo con brackets metálicos, a la luz del sol" data-alt-en="Woman smiling with metal braces in sunlight"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Sonrisa con brackets</span><span data-l="en">Smile with braces</span></span><span>Polina / Pexels</span></figcaption></figure>
+    </div>
+  </div>
+  <div class="wrap hero-sheet">
+    <aside class="hero-card frame" aria-label="Ficha del servicio" data-aria-es="Ficha del servicio" data-aria-en="Service sheet">
       <span class="mono"><span data-l="es">Ficha del servicio</span><span data-l="en">Service sheet</span></span>
       <ul>
         <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Plan escrito, objetivo de 48 h hábiles,</b> con tratamiento, días de estadía y precio orientativo.</span><span data-l="en"><b>Written plan, target of 48 business hours,</b> with treatment, length of stay and estimated price.</span></span></li>
-        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Odontólogos con registro que puedes consultar</b> en ReTHUS y consultorio en REPS: te damos los números para que los verifiques tú. (registros pendientes de verificación)</span><span data-l="en"><b>Dentists whose license you can look up</b> in ReTHUS and a clinic in REPS, Colombia's official provider registry: we give you the numbers to check yourself. (registration numbers pending verification)</span></span></li>
-        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Precios desglosados:</b> recaudamos el tratamiento a nombre de la clínica, que lo factura; nuestra tarifa de coordinación es fija, aparte y con IVA.</span><span data-l="en"><b>Itemized pricing:</b> we collect the treatment price on behalf of the clinic, which invoices it; our coordination fee is fixed, separate and subject to VAT.</span></span></li>
-        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Acompañamiento por WhatsApp</b> antes, durante y después de tu viaje.</span><span data-l="en"><b>WhatsApp support</b> before, during and after your trip.</span></span></li>
+                <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Precios desglosados:</b> ves por separado el tratamiento, que factura la clínica, y nuestra tarifa fija de coordinación con IVA.</span><span data-l="en"><b>Itemized pricing:</b> you see the treatment, invoiced by the clinic, separately from our fixed coordination fee plus VAT.</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Acompañamiento por correo</b> antes, durante y después de tu viaje.</span><span data-l="en"><b>Email support</b> before, during and after your trip.</span></span></li>
       </ul>
     </aside>
-    </div>
   </div>
 </section>
 
@@ -355,7 +362,7 @@ footer li{margin-bottom:var(--s2)}
 <div class="trust">
   <div class="wrap trust-grid">
     <div><strong><span data-l="es">Español e inglés</span><span data-l="en">Spanish &amp; English</span></strong><span data-l="es">Atención en tu idioma</span><span data-l="en">Support in your language</span></div>
-    <div><strong><span data-l="es">Costos desglosados</span><span data-l="en">Itemized costs</span></strong><span data-l="es">Tratamiento, tarifa + IVA y costos de pago, por separado. (contrato de mandato: pendiente firmar)</span><span data-l="en">Treatment, fee + VAT and payment costs, shown separately. (mandate contract: pending signature)</span></div>
+    <div><strong><span data-l="es">Costos desglosados</span><span data-l="en">Itemized costs</span></strong><span data-l="es">Tratamiento, tarifa + IVA y costos de pago, por separado.</span><span data-l="en">Treatment, fee + VAT and payment costs, shown separately.</span></div>
     <div><strong><span data-l="es">Citas antes del viaje</span><span data-l="en">Appointments first</span></strong><span data-l="es">Agenda confirmada antes de tus tiquetes</span><span data-l="en">Confirmed before you book flights</span></div>
     <div><strong><span data-l="es">Tu historia clínica</span><span data-l="en">Your records</span></strong><span data-l="es">Te llevas radiografías y plan</span><span data-l="en">You take your X-rays and plan home</span></div>
   </div>
@@ -376,7 +383,7 @@ footer li{margin-bottom:var(--s2)}
         <span class="tag"><span data-l="es">Para empezar</span><span data-l="en">Start here</span></span>
         <h3><span data-l="es">Chequeo integral + plan</span><span data-l="en">Full check-up + plan</span></h3>
         <p><span data-l="es">Sabe exactamente qué necesitas y cuánto cuesta, para decidir con calma.</span><span data-l="en">Know exactly what you need and what it costs, so you can decide calmly.</span></p>
-        <p class="price"><span data-l="es">Tratamiento desde</span><span data-l="en">Treatment from</span><b>USD 120</b><span>Ref. COP 480.000</span></p>
+        <p class="price"><span data-l="es">Tratamiento desde</span><span data-l="en">Treatment from</span><b>USD 120</b><span data-l="es">Aprox. COP 480.000</span><span data-l="en">Approx. COP 480,000</span></p>
         <p class="fee"><span data-l="es">+ coordinación USD 150 + IVA 19 % · Estadía: 1–2 días, según valoración</span><span data-l="en">+ coordination USD 150 + 19% VAT · Stay: 1–2 days, subject to assessment</span></p>
         <ul>
           <li><span data-l="es">Examen odontológico completo</span><span data-l="en">Complete dental exam</span></li>
@@ -385,15 +392,15 @@ footer li{margin-bottom:var(--s2)}
           <li><span data-l="es">Plan de tratamiento escrito con presupuesto</span><span data-l="en">Written treatment plan with quote</span></li>
         </ul>
         <p class="no"><span data-l="es">No incluye: vuelos, alojamiento ni los tratamientos del plan.</span><span data-l="en">Not included: flights, lodging or the treatments in the plan.</span></p>
-        <a class="btn btn-wa wa-link" data-pkg="chequeo" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Consultar este paquete</span><span data-l="en">Ask about this package</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
+        <a class="btn btn-wa wa-link" data-pkg="chequeo" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia"><span data-l="es">Pedir precio de este paquete</span><span data-l="en">Get this package's price</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
       </article>
 
       <article class="card featured frame">
         <span class="tag"><span data-l="es">Ideal si viajas seguido</span><span data-l="en">If you travel often</span></span>
-        <figure class="photo" style="--ar:3/2"><picture><source srcset="img/ortodoncia-brackets.webp" type="image/webp"><img src="img/ortodoncia-brackets.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Primer plano de un control de ortodoncia con brackets y espejo dental (foto ilustrativa de stock)" data-alt-es="Primer plano de un control de ortodoncia con brackets y espejo dental (foto ilustrativa de stock)" data-alt-en="Close-up of an orthodontic check with braces and a dental mirror (illustrative stock photo)"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Control de ortodoncia</span><span data-l="en">Orthodontic check</span></span><span>cottonbro studio / Pexels</span></figcaption></figure>
-        <h3><span data-l="es">Ortodoncia diáspora</span><span data-l="en">Orthodontics for travelers</span></h3>
+        <figure class="photo" style="--ar:3/2"><picture><source srcset="img/ortodoncia-brackets.webp" type="image/webp"><img src="img/ortodoncia-brackets.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Primer plano de un control de ortodoncia con brackets y espejo dental" data-alt-es="Primer plano de un control de ortodoncia con brackets y espejo dental" data-alt-en="Close-up of an orthodontic check with braces and a dental mirror"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Control de ortodoncia</span><span data-l="en">Orthodontic check</span></span><span>cottonbro studio / Pexels</span></figcaption></figure>
+        <h3><span data-l="es">Ortodoncia en tus viajes</span><span data-l="en">Orthodontics on your trips</span></h3>
         <p><span data-l="es">Inicia tu ortodoncia en un viaje y haz los controles en los viajes que ya tienes planeados.</span><span data-l="en">Start your orthodontic treatment on one trip and do check-ups on trips you already have planned.</span></p>
-        <p class="price"><span data-l="es">Tratamiento desde</span><span data-l="en">Treatment from</span><b>USD 2.000</b><span>Ref. COP 8.000.000</span></p>
+        <p class="price"><span data-l="es">Tratamiento desde</span><span data-l="en">Treatment from</span><b>USD 2,000</b><span data-l="es">Aprox. COP 8.000.000</span><span data-l="en">Approx. COP 8,000,000</span></p>
         <p class="fee"><span data-l="es">+ coordinación USD 150 + IVA 19 % · Instalación: 2–4 días, según valoración</span><span data-l="en">+ coordination USD 150 + 19% VAT · Placement: 2–4 days, subject to assessment</span></p>
         <ul>
           <li><span data-l="es">Valoración y estudios de ortodoncia</span><span data-l="en">Orthodontic assessment and records</span></li>
@@ -402,14 +409,14 @@ footer li{margin-bottom:var(--s2)}
           <li><span data-l="es">Seguimiento remoto cuando tu caso lo permita</span><span data-l="en">Remote follow-up when your case allows it</span></li>
         </ul>
         <p class="no"><span data-l="es">No incluye: vuelos, alojamiento, retenedores o fases adicionales no previstas en el plan.</span><span data-l="en">Not included: flights, lodging, retainers or extra phases not in the plan.</span></p>
-        <a class="btn btn-wa wa-link" data-pkg="ortodoncia" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Consultar este paquete</span><span data-l="en">Ask about this package</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
+        <a class="btn btn-wa wa-link" data-pkg="ortodoncia" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia"><span data-l="es">Pedir precio de este paquete</span><span data-l="en">Get this package's price</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
       </article>
 
       <article class="card frame">
         <span class="tag"><span data-l="es">Viaje corto</span><span data-l="en">Short trip</span></span>
         <h3><span data-l="es">Sonrisa express</span><span data-l="en">Express smile</span></h3>
         <p><span data-l="es">Para verte y sentirte mejor en pocos días de viaje.</span><span data-l="en">Look and feel better in just a few days.</span></p>
-        <p class="price"><span data-l="es">Tratamiento desde</span><span data-l="en">Treatment from</span><b>USD 450</b><span>Ref. COP 1.800.000</span></p>
+        <p class="price"><span data-l="es">Tratamiento desde</span><span data-l="en">Treatment from</span><b>USD 450</b><span data-l="es">Aprox. COP 1.800.000</span><span data-l="en">Approx. COP 1,800,000</span></p>
         <p class="fee"><span data-l="es">+ coordinación USD 150 + IVA 19 % · Estadía: 2–4 días, según valoración</span><span data-l="en">+ coordination USD 150 + 19% VAT · Stay: 2–4 days, subject to assessment</span></p>
         <ul>
           <li><span data-l="es">Valoración</span><span data-l="en">Assessment</span></li>
@@ -418,13 +425,13 @@ footer li{margin-bottom:var(--s2)}
           <li><span data-l="es">Resinas o carillas en resina, según tu caso</span><span data-l="en">Composite fillings or composite veneers, depending on your case</span></li>
         </ul>
         <p class="no"><span data-l="es">No incluye: vuelos, alojamiento ni tratamientos adicionales detectados en la valoración.</span><span data-l="en">Not included: flights, lodging or extra treatments found during the assessment.</span></p>
-        <a class="btn btn-wa wa-link" data-pkg="express" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Consultar este paquete</span><span data-l="en">Ask about this package</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
+        <a class="btn btn-wa wa-link" data-pkg="express" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia"><span data-l="es">Pedir precio de este paquete</span><span data-l="en">Get this package's price</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
       </article>
     </div>
 
     <p class="note">
-      <span data-l="es">Precios orientativos "desde", válidos hasta 31 de marzo de 2027. Son una referencia: salen de rangos publicados por clínicas de otras ciudades de Colombia (Bogotá y Cartagena) y los pesos (COP) usan una tasa de referencia de 4.000 COP por USD; los confirmaremos con la clínica aliada en Barranquilla. El precio final lo define el odontólogo en la consulta presencial. El tratamiento lo presta y factura la clínica; Smile Colombia recauda ese valor a nombre y por cuenta de la clínica, como mandataria. La tarifa de coordinación la factura Smile Colombia aparte, con IVA del 19 %. Ningún paquete incluye vuelos. Detalle en <a href="reembolsos.html">reembolsos</a> y <a href="terminos.html">términos</a>.</span>
-      <span data-l="en">Estimated "from" prices, valid until 31 de marzo de 2027. They are a reference: they come from ranges published by clinics in other Colombian cities (Bogotá and Cartagena), and the peso (COP) figures use a reference rate of 4,000 COP per USD; we will confirm them with the partner clinic in Barranquilla. The final price is set by the dentist at the in-person visit. Treatment is provided and invoiced by the clinic; Smile Colombia collects that amount in the clinic's name and on its behalf, as its agent (mandate). Smile Colombia invoices the coordination fee separately, plus 19% Colombian VAT. No package includes flights. See <a href="reembolsos.html">refunds</a> and <a href="terminos.html">terms</a>.</span>
+      <span data-l="es">Precio de referencia; se confirma por escrito en tu valoración. Precios "desde", válidos hasta el 31 de marzo de 2027; los valores en pesos (COP) son aproximados, con una tasa de referencia de 4.000 COP por USD. El tratamiento lo presta y factura la clínica, y la tarifa de coordinación la factura Smile Colombia aparte, con IVA del 19 %. Ningún paquete incluye vuelos. <a href="terminos.html">¿Cómo se factura?</a> · <a href="reembolsos.html">Reembolsos</a></span>
+      <span data-l="en">Reference price; confirmed in writing at your assessment. "From" prices, valid until March 31, 2027; peso (COP) amounts are approximate, at a reference rate of 4,000 COP per USD. Treatment is provided and invoiced by the clinic, and Smile Colombia invoices the coordination fee separately, plus 19% Colombian VAT. No package includes flights. <a href="terminos.html">How is it invoiced?</a> · <a href="reembolsos.html">Refunds</a></span>
     </p>
   </div>
 </section>
@@ -437,46 +444,36 @@ footer li{margin-bottom:var(--s2)}
       <h2><span data-l="es">De tus fotos a tu sonrisa, en 5 pasos</span><span data-l="en">From your photos to your smile, in 5 steps</span></h2>
     </div></div>
     <ol class="steps">
-      <li>
-        <h3><span data-l="es">Escríbenos</span><span data-l="en">Message us</span></h3>
-        <p><span data-l="es">Por WhatsApp: cuéntanos qué quieres y cuándo viajas a Barranquilla.</span><span data-l="en">On WhatsApp: tell us what you'd like and when you're traveling to Barranquilla.</span></p>
-      </li>
-      <li>
-        <h3><span data-l="es">Autoriza y envía fotos</span><span data-l="en">Consent &amp; send photos</span></h3>
-        <p><span data-l="es">Te pedimos autorización para tus datos de salud y te explicamos qué fotos tomar con tu celular.</span><span data-l="en">We ask for your consent for your health data and explain which photos to take with your phone.</span></p>
-      </li>
-      <li>
-        <h3><span data-l="es">Recibe tu plan (objetivo: 48 h)</span><span data-l="en">Get your plan (target: 48 h)</span></h3>
-        <p><span data-l="es">El odontólogo valora tu caso y te enviamos un plan escrito con precio orientativo; nuestro objetivo es hacerlo en 48 horas hábiles. (SLA odontólogo: pendiente firmar)</span><span data-l="en">The dentist reviews your case and we send a written plan with an estimated price; our target is 48 business hours. (dentist SLA: pending signature)</span></p>
-      </li>
-      <li>
-        <h3><span data-l="es">Confirma con depósito</span><span data-l="en">Confirm with a deposit</span></h3>
-        <p><span data-l="es">Con el depósito reservamos tus citas y activamos la conserjería: guía de viaje, transporte y hospedaje recomendados.</span><span data-l="en">Your deposit books your appointments and activates concierge support: travel guide, recommended transport and lodging.</span></p>
-      </li>
-      <li>
-        <h3><span data-l="es">Viaja y te acompañamos</span><span data-l="en">Travel, we've got you</span></h3>
-        <p><span data-l="es">Te tratas en Barranquilla, te llevas tu historia clínica y seguimos en contacto a los 7, 30 y 90 días.</span><span data-l="en">Get treated in Barranquilla, take your records home and we check in at 7, 30 and 90 days.</span></p>
-      </li>
+      <li><h3><span data-l="es">Cuéntanos tu caso</span><span data-l="en">Tell us about your case</span></h3>
+        <p><span data-l="es">Escríbenos: cuéntanos qué quieres mejorar y cuándo viajas a Barranquilla. Te respondemos por correo. <a class="wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia">Escribir ahora</a></span><span data-l="en">Write to us: tell us what you'd like to improve and when you're traveling to Barranquilla. We reply by email. <a class="wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia">Write now</a></span></p></li>
+      <li><h3><span data-l="es">Autoriza y envía tus fotos</span><span data-l="en">Consent &amp; send your photos</span></h3>
+        <p><span data-l="es">Te pedimos autorización para tus datos de salud y te explicamos qué fotos tomar con tu celular. <a href="#privacidad">Ver aviso de privacidad</a></span><span data-l="en">We ask for your consent for your health data and explain which photos to take with your phone. <a href="#privacidad">Read the privacy notice</a></span></p></li>
+      <li><h3><span data-l="es">Recibe tu plan y precio orientativo</span><span data-l="en">Get your plan and estimated price</span></h3>
+        <p><span data-l="es">El odontólogo valora tu caso y te enviamos un plan escrito; nuestro objetivo es hacerlo en 48 horas hábiles. <a href="#paquetes">Ver paquetes</a></span><span data-l="en">The dentist reviews your case and we send you a written plan; our target is 48 business hours. <a href="#paquetes">See packages</a></span></p></li>
+      <li><h3><span data-l="es">Reserva tus citas con depósito</span><span data-l="en">Book your appointments with a deposit</span></h3>
+        <p><span data-l="es">Con el depósito reservamos tus citas y te enviamos una guía de viaje con transporte y hospedaje recomendados. <a href="reembolsos.html">Condiciones del depósito</a></span><span data-l="en">Your deposit books your appointments and we send you a travel guide with recommended transport and lodging. <a href="reembolsos.html">Deposit terms</a></span></p></li>
+      <li><h3><span data-l="es">Viaja, trátate y te acompañamos al volver</span><span data-l="en">Travel, get treated, and we stay with you back home</span></h3>
+        <p><span data-l="es">Te tratas en Barranquilla, te llevas tu historia clínica y seguimos en contacto después de tu viaje. <a href="#faq">Preguntas frecuentes</a></span><span data-l="en">Get treated in Barranquilla, take your records home and we stay in touch after your trip. <a href="#faq">FAQ</a></span></p></li>
     </ol>
 
-    <div class="trip"><figure class="photo"><picture><source srcset="img/consultorio-dental.webp" type="image/webp"><img src="img/consultorio-dental.jpg" width="960" height="720" loading="lazy" decoding="async" alt="Sillón odontológico y equipos en un consultorio, en blanco y negro (foto ilustrativa, no es nuestra clínica aliada)" data-alt-es="Sillón odontológico y equipos en un consultorio, en blanco y negro (foto ilustrativa, no es nuestra clínica aliada)" data-alt-en="Dental chair and equipment in a clinic, black and white (illustrative photo, not our partner clinic)"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Consultorio</span><span data-l="en">Dental clinic</span></span><span>Werapinthorn Jaijan / Unsplash</span></figcaption></figure><figure class="photo"><picture><source srcset="img/barranquilla-carnaval.webp" type="image/webp"><img src="img/barranquilla-carnaval.jpg" width="1024" height="576" loading="lazy" decoding="async" alt="Bailarín del Carnaval de Barranquilla con máscara, plumas verdes y traje bordado, en un desfile" data-alt-es="Bailarín del Carnaval de Barranquilla con máscara, plumas verdes y traje bordado, en un desfile" data-alt-en="Barranquilla Carnival dancer with a mask, green feathers and an embroidered costume at a parade"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Carnaval de Barranquilla</span><span data-l="en">Barranquilla Carnival</span></span><span>Mister Edits / Pexels</span></figcaption></figure><figure class="photo"><picture><source srcset="img/barranquilla-rio-magdalena.webp" type="image/webp"><img src="img/barranquilla-rio-magdalena.jpg" width="720" height="900" loading="lazy" decoding="async" alt="Vista aérea del río Magdalena y la ciudad de Barranquilla" data-alt-es="Vista aérea del río Magdalena y la ciudad de Barranquilla" data-alt-en="Aerial view of the Magdalena River and the city of Barranquilla"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Río Magdalena, Barranquilla</span><span data-l="en">Magdalena River, Barranquilla</span></span><span>Carlos Mendoza / Pexels</span></figcaption></figure></div>
+    <div class="trip"><figure class="photo"><picture><source srcset="img/consultorio-dental.webp" type="image/webp"><img src="img/consultorio-dental.jpg" width="960" height="720" loading="lazy" decoding="async" alt="Sillón odontológico y equipos en un consultorio, en blanco y negro" data-alt-es="Sillón odontológico y equipos en un consultorio, en blanco y negro" data-alt-en="Dental chair and equipment in a clinic, black and white"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Consultorio</span><span data-l="en">Dental clinic</span></span><span>Werapinthorn Jaijan / Unsplash</span></figcaption></figure><figure class="photo"><picture><source srcset="img/barranquilla-carnaval.webp" type="image/webp"><img src="img/barranquilla-carnaval.jpg" width="1024" height="576" loading="lazy" decoding="async" alt="Bailarín del Carnaval de Barranquilla con máscara, plumas verdes y traje bordado, en un desfile" data-alt-es="Bailarín del Carnaval de Barranquilla con máscara, plumas verdes y traje bordado, en un desfile" data-alt-en="Barranquilla Carnival dancer with a mask, green feathers and an embroidered costume at a parade"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Carnaval de Barranquilla</span><span data-l="en">Barranquilla Carnival</span></span><span>Mister Edits / Pexels</span></figcaption></figure><figure class="photo"><picture><source srcset="img/barranquilla-rio-magdalena.webp" type="image/webp"><img src="img/barranquilla-rio-magdalena.jpg" width="720" height="900" loading="lazy" decoding="async" alt="Vista aérea del río Magdalena y la ciudad de Barranquilla" data-alt-es="Vista aérea del río Magdalena y la ciudad de Barranquilla" data-alt-en="Aerial view of the Magdalena River and the city of Barranquilla"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Río Magdalena, Barranquilla</span><span data-l="en">Magdalena River, Barranquilla</span></span><span>Carlos Mendoza / Pexels</span></figcaption></figure></div>
 
     <div class="model">
       <div class="frame">
         <h3><span data-l="es">¿Qué pagas y a quién?</span><span data-l="en">What do you pay, and to whom?</span></h3>
-        <p><span data-l="es"><b>Un solo pago a Smile Colombia, desglosado:</b></span><span data-l="en"><b>One payment to Smile Colombia, itemized:</b></span></p>
+        <p><span data-l="es"><b>Tu pago, desglosado:</b></span><span data-l="en"><b>Your payment, itemized:</b></span></p>
         <ul>
-          <li><span data-l="es"><b>Tratamiento:</b> USD según paquete. Lo presta y lo factura la clínica Clínica aliada (pendiente verificación) (NIT Pendiente verificación, REPS Pendiente verificación); Smile Colombia lo recauda a nombre y por cuenta de la clínica como mandataria y se lo entrega. No es ingreso de Smile Colombia.</span><span data-l="en"><b>Treatment:</b> USD según paquete. Provided and invoiced by the clinic Clínica aliada (pendiente verificación) (Tax ID Pendiente verificación, REPS Pendiente verificación); Smile Colombia collects it in the clinic's name and on its behalf, as its agent, and passes it on. It is not Smile Colombia's income.</span></li>
-          <li><span data-l="es"><b>Tarifa de coordinación:</b> USD 150 + IVA 19 %, fija e igual sin importar el tratamiento. La factura Smile Colombia (Smile Colombia S.A.S. (en constitución), NIT Pendiente) como ingreso propio.</span><span data-l="en"><b>Coordination fee:</b> USD 150 + 19% VAT, fixed regardless of treatment. Invoiced by Smile Colombia (Smile Colombia S.A.S. (en constitución), Tax ID Pendiente) as its own income.</span></li>
-          <li><span data-l="es"><b>Comisiones del medio de pago:</b> A cargo del paciente; se muestran antes de pagar (estándar turismo médico). (asumido por el paciente en este MVP; pendiente confirmar)</span><span data-l="en"><b>Payment fees:</b> A cargo del paciente; se muestran antes de pagar (estándar turismo médico). (patient bears it in this MVP; pending confirmation)</span></li>
-          <li><span data-l="es"><b>Diferencia en cambio:</b> se cobra en USD a la tasa TRM del día de cobro (Banco de la República). (asumida por el paciente en este MVP; pendiente confirmar)</span><span data-l="en"><b>Exchange-rate difference:</b> charged in USD at the TRM del día de cobro (Banco de la República) rate. (patient bears it in this MVP; pending confirmation)</span></li>
-          <li><span data-l="es"><b>Depósito:</b> 20 % del valor del tratamiento (se imputa primero a la tarifa de coordinación y el resto al tratamiento) para confirmar tu caso, que se descuenta del total. (20 %; pendiente firmar)</span><span data-l="en"><b>Deposit:</b> 20 % del valor del tratamiento (se imputa primero a la tarifa de coordinación y el resto al tratamiento) to confirm your case, credited to the total. (20%; pending signature)</span></li>
+          <li><span data-l="es"><b>Tratamiento:</b> en USD, según tu paquete. Lo presta y lo factura la clínica aliada; nosotros te lo cobramos en su nombre y se lo entregamos.</span><span data-l="en"><b>Treatment:</b> in USD, depending on your package. Provided and invoiced by the partner clinic; we collect it on the clinic's behalf and pass it on.</span></li>
+          <li><span data-l="es"><b>Tarifa de coordinación:</b> USD 150 + IVA 19 %, fija sin importar el tratamiento. La factura Smile Colombia.</span><span data-l="en"><b>Coordination fee:</b> USD 150 + 19% VAT, fixed regardless of treatment. Invoiced by Smile Colombia.</span></li>
+          <li><span data-l="es"><b>Comisiones del medio de pago:</b> a cargo del paciente; se muestran antes de pagar.</span><span data-l="en"><b>Payment fees:</b> paid by the patient and shown before you pay.</span></li>
+          <li><span data-l="es"><b>Tasa de cambio:</b> se cobra en USD a la TRM oficial del día de pago (Banco de la República).</span><span data-l="en"><b>Exchange rate:</b> charged in USD at the official TRM exchange rate on the payment date (Banco de la República).</span></li>
+          <li><span data-l="es"><b>Depósito:</b> para reservar tus citas pagas un depósito del 20 % del tratamiento. Ese valor se descuenta del total. Primero cubre la tarifa de coordinación y el resto va a tu tratamiento.</span><span data-l="en"><b>Deposit:</b> to book your appointments you pay a deposit of 20% of the treatment price. It is deducted from the total. It first covers the coordination fee and the rest goes to your treatment.</span></li>
         </ul>
         <p><span data-l="es">El hotel y el transporte los pagas directamente al proveedor. Ver <a href="reembolsos.html">política de reembolsos y retracto</a>.</span><span data-l="en">You pay hotels and transport directly to the provider. See the <a href="reembolsos.html">refund and withdrawal policy</a>.</span></p>
       </div>
       <div>
         <h3><span data-l="es">¿Por qué es importante?</span><span data-l="en">Why does it matter?</span></h3>
-        <p><span data-l="es">Nuestra remuneración es solo la tarifa fija de coordinación, que pagas tú; no depende de cuánto cueste tu tratamiento. (pendiente abogado / firmar mandato)</span><span data-l="en">Our only pay is the fixed coordination fee, which you pay; it doesn't depend on what your treatment costs. (pending counsel / mandate signature)</span></p>
+        <p><span data-l="es">Nuestra remuneración es solo la tarifa fija de coordinación, que pagas tú; no depende de cuánto cueste tu tratamiento.</span><span data-l="en">Our only pay is the fixed coordination fee, which you pay; it doesn't depend on what your treatment costs.</span></p>
       </div>
     </div>
   </div>
@@ -486,41 +483,23 @@ footer li{margin-bottom:var(--s2)}
 <section id="garantia">
   <div class="wrap">
     <div class="sec-head"><span class="num" aria-hidden="true">03</span><div>
-      <span class="eyebrow"><span data-l="es">Garantía y confianza</span><span data-l="en">Guarantee &amp; trust</span></span>
+      <span class="eyebrow"><span data-l="es">Confianza</span><span data-l="en">Trust</span></span>
       <h2><span data-l="es">Todo por escrito, antes y después</span><span data-l="en">Everything in writing, before and after</span></h2>
     </div></div>
   <div class="two">
     <div>
       <ul class="list-check">
         <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Plan escrito antes de viajar:</b> tratamiento, número de citas, días de estadía y precio orientativo.</span><span data-l="en"><b>Written plan before you travel:</b> treatment, number of visits, length of stay and estimated price.</span></span></li>
-        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Garantía escrita del odontólogo:</b> La define y firma por escrito el odontólogo tratante (detalle pendiente de firmar) (pendiente firmar)</span><span data-l="en"><b>Written guarantee from the dentist:</b> La define y firma por escrito el odontólogo tratante (detalle pendiente de firmar) (pending signature)</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Garantía escrita:</b> tu odontólogo te entrega por escrito qué cubre, por cuánto tiempo y cómo se hace efectiva.</span><span data-l="en"><b>Written guarantee:</b> the treating dentist defines and signs the guarantee in writing: what it covers, for how long and how to use it.</span></span></li>
         <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Consentimiento informado</b> en español o inglés, firmado con tu odontólogo, que te explica beneficios y riesgos.</span><span data-l="en"><b>Informed consent</b> in Spanish or English, signed with your dentist, explaining benefits and risks.</span></span></li>
         <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Tu historia clínica y radiografías</b> se te entregan al finalizar, para que cualquier odontólogo en tu país pueda continuar.</span><span data-l="en"><b>Your clinical records and X-rays</b> are handed to you at the end, so any dentist back home can follow up.</span></span></li>
-        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Si algo no está bien después de volver:</b> Según la garantía escrita del odontólogo: revisión remota y, si aplica, cita de control en el siguiente viaje a Colombia (pendiente firmar)</span><span data-l="en"><b>If something isn't right after you return:</b> Según la garantía escrita del odontólogo: revisión remota y, si aplica, cita de control en el siguiente viaje a Colombia (pendiente firmar)</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Si algo no está bien después de volver:</b> lo revisamos a distancia con tu odontólogo y, si hace falta, agendamos un control en tu siguiente viaje a Colombia.</span><span data-l="en"><b>If something isn't right after you return:</b> we'll review it remotely with your dentist and, if needed, schedule a check-up on your next trip to Colombia.</span></span></li>
       </ul>
       <p class="aside-note"><span data-l="es">Ningún tratamiento garantiza un resultado específico; tu odontólogo te explicará qué esperar en tu caso.</span><span data-l="en">No treatment can guarantee a specific result; your dentist will explain what to expect in your case.</span></p>
     </div>
     <div>
       <h3><span data-l="es">Nuestros odontólogos</span><span data-l="en">Our dentists</span></h3>
-      <p class="aside-note"><span data-l="es">Puedes verificar a cada profesional en ReTHUS y el consultorio en el REPS del Ministerio de Salud de Colombia. (pendiente verificación)</span><span data-l="en">You can verify each professional in ReTHUS and the clinic in REPS, both run by Colombia's Ministry of Health. (pending verification)</span></p>
-      <div class="team">
-        <div class="member">
-          <div class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7 .5 3 1 6.5 2.5 6.5S9.5 17 12 17s3 4 4.5 4 2-3.5 2.5-6.5c.5-2.5 2-4 2-7C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3Z"/></svg></div>
-          <b>Pendiente verificación</b>
-          <small><span data-l="es">Ortodoncista</span><span data-l="en">Orthodontist</span></small>
-          <small><span data-l="es">Registro profesional:</span><span data-l="en">License no.:</span> Pendiente verificación</small>
-        </div>
-        <div class="member">
-          <div class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7 .5 3 1 6.5 2.5 6.5S9.5 17 12 17s3 4 4.5 4 2-3.5 2.5-6.5c.5-2.5 2-4 2-7C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3Z"/></svg></div>
-          <b>Pendiente verificación</b>
-          <small><span data-l="es">Odontología general</span><span data-l="en">General dentist</span></small>
-          <small><span data-l="es">Registro profesional:</span><span data-l="en">License no.:</span> Pendiente verificación</small>
-        </div>
-      </div>
-      <p class="aside-note" style="margin-top:var(--s4)">
-        <span data-l="es">Consultorio: Clínica aliada (pendiente verificación) · Pendiente verificación, Barranquilla · Código REPS: Pendiente verificación · NIT Pendiente verificación. Presta y factura el tratamiento; Smile Colombia lo recauda como mandataria.</span>
-        <span data-l="en">Clinic: Clínica aliada (pendiente verificación) · Pendiente verificación, Barranquilla · REPS code: Pendiente verificación · Tax ID Pendiente verificación. Provides and invoices treatment; Smile Colombia collects it as its agent.</span>
-      </p>
+      <p class="aside-note"><span data-l="es">Muy pronto te presentamos a nuestros odontólogos aliados en Barranquilla, con su registro en ReTHUS y el de la clínica en REPS para que los verifiques tú mismo.</span><span data-l="en">Soon we'll introduce our partner dentists in Barranquilla, with their ReTHUS license and the clinic's REPS registration so you can verify them yourself.</span></p>
     </div>
   </div>
   </div>
@@ -536,7 +515,7 @@ footer li{margin-bottom:var(--s2)}
     <div class="faq">
       <details>
         <summary><span data-l="es">¿La valoración por fotos tiene costo?</span><span data-l="en">Does the photo assessment cost anything?</span></summary>
-        <p><span data-l="es">No. La valoración por WhatsApp es sin costo y sin compromiso. Solo pagas si decides seguir adelante con tu caso.</span><span data-l="en">No. The WhatsApp assessment is free and with no commitment. You only pay if you decide to move forward.</span></p>
+        <p><span data-l="es">No. La valoración por fotos es gratis y sin compromiso. Solo pagas si decides seguir adelante con tu caso.</span><span data-l="en">No. The photo assessment is free and with no commitment. You only pay if you decide to move forward.</span></p>
       </details>
       <details>
         <summary><span data-l="es">¿El precio del plan es el precio final?</span><span data-l="en">Is the price in my plan the final price?</span></summary>
@@ -548,15 +527,15 @@ footer li{margin-bottom:var(--s2)}
       </details>
       <details>
         <summary><span data-l="es">¿Cómo funciona la ortodoncia si vivo en el exterior?</span><span data-l="en">How does orthodontic treatment work if I live abroad?</span></summary>
-        <p><span data-l="es">El odontólogo arma contigo un plan de controles según tus viajes a Colombia y, cuando el caso lo permite, hace seguimiento remoto. Antes de empezar te explicamos por escrito cada cuánto debes venir y qué pasa si no puedes viajar: Controles alineados a los viajes del paciente; frecuencia y urgencias las define el odontólogo por escrito antes de iniciar (pendiente firmar).</span><span data-l="en">The dentist builds a check-up schedule around your trips to Colombia and, when the case allows, follows up remotely. Before you start, we explain in writing how often you need to come and what happens if you can't travel: Controles alineados a los viajes del paciente; frecuencia y urgencias las define el odontólogo por escrito antes de iniciar (pendiente firmar).</span></p>
+        <p><span data-l="es">El odontólogo arma contigo un plan de controles según tus viajes a Colombia y, cuando el caso lo permite, hace seguimiento remoto. Antes de empezar te explicamos por escrito cada cuánto debes venir y qué pasa si no puedes viajar.</span><span data-l="en">The dentist builds a check-up schedule around your trips to Colombia and, when the case allows, follows up remotely. Before you start, we explain in writing how often you need to come and what happens if you can't travel; the dentist sets the check-up frequency and urgent-care steps in writing before you start.</span></p>
       </details>
       <details>
         <summary><span data-l="es">¿Qué pasa si tengo una molestia cuando ya regresé?</span><span data-l="en">What if I have a problem after I'm back home?</span></summary>
-        <p><span data-l="es">Escríbenos por WhatsApp. Lo revisamos con tu odontólogo y te orientamos según la garantía escrita y el protocolo de urgencias: Escríbenos; lo revisamos con tu odontólogo. Te llevas tu historia clínica. Protocolo detallado pendiente de firmar. Te llevas tu historia clínica para que cualquier odontólogo pueda atenderte.</span><span data-l="en">Message us on WhatsApp. We review it with your dentist and guide you under your written guarantee and urgent-care protocol: Escríbenos; lo revisamos con tu odontólogo. Te llevas tu historia clínica. Protocolo detallado pendiente de firmar. You keep your clinical records so any dentist can help you.</span></p>
+        <p><span data-l="es">Escríbenos. Revisamos tu caso con tu odontólogo y te orientamos según tu garantía escrita. Como te llevas tu historia clínica y radiografías, cualquier odontólogo puede atenderte donde estés.</span><span data-l="en">Write to us. We review your case with your dentist and guide you under your written guarantee. Since you take your clinical records and X-rays home, any dentist can see you wherever you are.</span></p>
       </details>
       <details>
         <summary><span data-l="es">¿Ustedes venden los tiquetes o el hotel?</span><span data-l="en">Do you sell flights or hotels?</span></summary>
-        <p><span data-l="es">No. Te recomendamos opciones de hospedaje cerca de la clínica y transporte desde el aeropuerto, pero tú reservas y pagas directamente. Te pedimos comprar tiquetes solo después de tener tus citas confirmadas. Llegas al aeropuerto internacional Ernesto Cortissoz (BAQ), que sirve a Barranquilla; hay vuelos directos desde Miami (por ejemplo, Avianca y American Airlines), pero horarios y frecuencias cambian: verifícalos al reservar. Barranquilla tiene clima cálido todo el año.</span><span data-l="en">No. We recommend lodging near the clinic and airport transport, but you book and pay directly. We ask you to buy flights only after your appointments are confirmed. You land at Ernesto Cortissoz International Airport (BAQ), which serves Barranquilla; there are nonstop flights from Miami (for example, Avianca and American Airlines), but schedules and frequencies change, so check them when you book. Barranquilla is warm all year round.</span></p>
+        <p><span data-l="es">No. Te recomendamos opciones de hospedaje cerca de la clínica y transporte desde el aeropuerto, pero tú reservas y pagas directamente. Te pedimos comprar tiquetes solo después de tener tus citas confirmadas. Llegas al aeropuerto internacional Ernesto Cortissoz (BAQ), que sirve a Barranquilla; hay vuelos desde varias ciudades de Estados Unidos; revisa horarios al reservar. Barranquilla tiene clima cálido todo el año.</span><span data-l="en">No. We recommend lodging near the clinic and airport transport, but you book and pay directly. We ask you to buy flights only after your appointments are confirmed. You land at Ernesto Cortissoz International Airport (BAQ), which serves Barranquilla; there are flights from several US cities; check schedules when you book. Barranquilla is warm all year round.</span></p>
       </details>
       <details>
         <summary><span data-l="es">¿Ustedes son la clínica?</span><span data-l="en">Are you the clinic?</span></summary>
@@ -568,7 +547,7 @@ footer li{margin-bottom:var(--s2)}
       </details>
       <details>
         <summary><span data-l="es">¿Cómo pago?</span><span data-l="en">How do I pay?</span></summary>
-        <p><span data-l="es">Pagas el total a Smile Colombia por Transferencia internacional, Zelle o Wise (a confirmar): el valor del tratamiento lo recaudamos a nombre de la clínica, que te entrega su factura, y la tarifa de coordinación + IVA te la facturamos nosotros. Primero pagas el depósito de 20 % del valor del tratamiento (se imputa primero a la tarifa de coordinación y el resto al tratamiento). Las comisiones del medio de pago y la diferencia en cambio se muestran antes de pagar. (paciente asume comisiones/FX en este MVP; pendiente confirmar)</span><span data-l="en">You pay the total to Smile Colombia via Transferencia internacional, Zelle o Wise (a confirmar): we collect the treatment amount in the clinic's name, and the clinic gives you its invoice; we invoice the coordination fee + VAT. You first pay a deposit of 20 % del valor del tratamiento (se imputa primero a la tarifa de coordinación y el resto al tratamiento). Payment fees and any exchange difference are shown before you pay. (patient bears fees/FX in this MVP; pending confirmation)</span></p>
+        <p><span data-l="es">Pagas por transferencia internacional, Zelle o Wise. La clínica te factura el tratamiento y Smile Colombia te factura la tarifa de coordinación + IVA. Primero pagas el depósito del 20 % del tratamiento, que se descuenta del total. Las comisiones del medio de pago y la tasa de cambio se muestran antes de pagar.</span><span data-l="en">You pay via international transfer, Zelle or Wise. The clinic invoices the treatment and Smile Colombia invoices the coordination fee + VAT. You first pay a deposit of 20% of the treatment price, deducted from the total. Payment fees and the exchange rate are shown before you pay.</span></p>
       </details>
     </div>
   </div>
@@ -581,9 +560,9 @@ footer li{margin-bottom:var(--s2)}
     <div>
     <span class="eyebrow" style="color:var(--on-accent)">→ <span data-l="es">Siguiente paso</span><span data-l="en">Next step</span></span>
     <h2><span data-l="es">¿Viajas pronto a Barranquilla?</span><span data-l="en">Traveling to Barranquilla soon?</span></h2>
-    <p class="lead"><span data-l="es">Escríbenos hoy y ten tu plan antes de comprar tiquetes.</span><span data-l="en">Message us today and have your plan before you book flights.</span></p>
+    <p class="lead"><span data-l="es">Escríbenos hoy y ten tu plan antes de comprar tiquetes.</span><span data-l="en">Write to us today and have your plan before you book flights.</span></p>
     </div>
-    <a class="btn btn-wa wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Escríbenos por correo</span><span data-l="en">Email us</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
+    <a class="btn btn-wa wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia"><span data-l="es">Quiero mi valoración gratis</span><span data-l="en">Get my free assessment</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
   </div>
 </section>
 
@@ -596,7 +575,7 @@ footer li{margin-bottom:var(--s2)}
       <h2>Aviso de privacidad</h2>
       <p>En cumplimiento de la Ley 1581 de 2012 y el Decreto 1377 de 2013 (compilado en el Decreto 1074 de 2015), te informamos:</p>
       <h3>Responsable</h3>
-      <p>Smile Colombia S.A.S. (en constitución) (marca Smile Colombia), NIT Pendiente, domicilio en Barranquilla, Atlántico, Colombia (dirección exacta pendiente), correo contacto@smilecolombia.co, teléfono Pendiente.</p>
+      <p>Smile Colombia S.A.S. (en constitución), domicilio en Barranquilla, Atlántico, Colombia, correo contacto@smilecolombia.co.</p>
       <h3>Qué datos tratamos y para qué</h3>
       <ul>
         <li>Datos de contacto (nombre, teléfono, correo, país y ciudad) para responderte, enviarte tu plan y coordinar tu viaje y tus citas.</li>
@@ -604,15 +583,15 @@ footer li{margin-bottom:var(--s2)}
         <li>Fechas de viaje y preferencias para coordinar agenda, hospedaje y transporte recomendados.</li>
       </ul>
       <h3>Datos sensibles</h3>
-      <p>Las fotos, radiografías e información de salud son <b>datos sensibles</b>. Solo los tratamos con tu <b>autorización previa, expresa e informada</b>, que pedimos antes de cualquier pregunta sobre tu salud y antes de que nos envíes fotos. <b>No estás obligado(a) a autorizar el tratamiento de datos sensibles</b> ni a responder preguntas sobre ellos. Sin estos datos no podemos hacer la valoración remota, pero puedes hacer tu valoración en persona. Solo los compartimos con el odontólogo que valora o atiende tu caso.</p>
+      <p>Las fotos, radiografías e información de salud son <b>datos sensibles</b>. Solo los tratamos con tu <b>autorización previa, expresa e informada</b>, que pedimos antes de cualquier pregunta sobre tu salud y antes de que nos envíes fotos. <b>No es obligatorio que autorices el tratamiento de datos sensibles</b> ni a responder preguntas sobre ellos. Sin estos datos no podemos hacer la valoración remota, pero puedes hacer tu valoración en persona. Solo los compartimos con el odontólogo que valora o atiende tu caso.</p>
       <h3>Autorizaciones separadas</h3>
-      <p>Te pedimos cada autorización por separado y ninguna viene marcada por defecto: (1) tratamiento de tus datos personales; (2) tratamiento de tus datos sensibles de salud; (3) transferencia de tus datos a la clínica y al odontólogo que valora o atiende tu caso; (4) mercadeo y avisos de temporada (opcional); y (5) publicación de tu caso (opcional). Negarte a las opcionales no afecta tu valoración. Puedes dejar de recibir mensajes respondiendo BAJA.</p>
+      <p>Cuando nos escribes, te pedimos cada autorización por separado y de forma expresa: (1) tratamiento de tus datos personales; (2) tratamiento de tus datos sensibles de salud; (3) transferencia de tus datos a la clínica y al odontólogo que valora o atiende tu caso; (4) mercadeo y avisos de temporada (opcional); y (5) publicación de tu caso (opcional). Negarte a las opcionales no afecta tu valoración. Puedes dejar de recibir mensajes cuando quieras escribiendo a contacto@smilecolombia.co.</p>
       <h3>Menores de edad</h3>
       <p>Si eres menor de 18 años, las autorizaciones las debe dar tu padre, madre o representante legal, quien debe acreditar esa calidad (Ley 1581 de 2012, art. 7; Decreto 1377 de 2013, art. 12). Respetamos el interés superior del menor y no publicamos casos ni fotos de menores.</p>
       <h3>Tus derechos</h3>
-      <p>Puedes conocer, actualizar, rectificar y suprimir tus datos; pedir prueba de tu autorización; revocarla; ser informado(a) sobre el uso de tus datos; y presentar quejas ante la Superintendencia de Industria y Comercio (SIC), después de haber hecho tu consulta o reclamo ante nosotros. Escríbenos a <b>contacto@smilecolombia.co</b>. Respondemos consultas en máximo 10 días hábiles y reclamos en máximo 15 días hábiles.</p>
+      <p>Puedes conocer, actualizar, rectificar y suprimir tus datos; pedir prueba de tu autorización; revocarla; recibir información sobre el uso de tus datos; y presentar quejas ante la Superintendencia de Industria y Comercio (SIC), después de haber hecho tu consulta o reclamo ante nosotros. Escríbenos a <b>contacto@smilecolombia.co</b>. Respondemos consultas en máximo 10 días hábiles y reclamos en máximo 15 días hábiles.</p>
       <h3>Transferencia y transmisión internacional</h3>
-      <p>Usamos proveedores que pueden almacenar datos fuera de Colombia (WhatsApp/Meta, Google, Cloudflare, Calendly, Tally, Neon y las pasarelas de pago), en países como Estados Unidos o de la Unión Europea. Al usar el botón de WhatsApp, Meta recibe tu número y el mensaje precargado. Lista completa en la <a href="privacidad.html">política de tratamiento de datos</a>. Te informamos de estos proveedores para que decidas; la transferencia a la clínica y al odontólogo se autoriza por separado.</p>
+      <p>Usamos proveedores que pueden almacenar datos fuera de Colombia (como el servicio de correo, el alojamiento del sitio y las pasarelas de pago), en países como Estados Unidos o de la Unión Europea. Lista completa en la <a href="privacidad.html">política de tratamiento de datos</a>. Te informamos de estos proveedores para que decidas; la transferencia a la clínica y al odontólogo se autoriza por separado.</p>
       <h3>Política completa</h3>
       <p>Nuestra política de tratamiento de datos está disponible en <a href="privacidad.html">privacidad.html</a> o puedes pedirla a contacto@smilecolombia.co. Este sitio no usa formularios propios ni cookies (de ningún tipo); solo guarda tu preferencia de idioma en el almacenamiento local de tu navegador (localStorage), que puedes borrar cuando quieras; Smile Colombia no publica fotos ni testimonios de pacientes sin su autorización escrita.</p>
     </div>
@@ -620,7 +599,7 @@ footer li{margin-bottom:var(--s2)}
       <h2>Privacy notice</h2>
       <p>Under Colombian Law 1581 of 2012 and Decree 1377 of 2013 (compiled in Decree 1074 of 2015), we inform you:</p>
       <h3>Data controller</h3>
-      <p>Smile Colombia S.A.S. (en constitución) (brand Smile Colombia), Tax ID (NIT) Pendiente, address Barranquilla, Atlántico, Colombia (dirección exacta pendiente), email contacto@smilecolombia.co, phone Pendiente.</p>
+      <p>Smile Colombia S.A.S. (company in formation), based in Barranquilla, Atlántico, Colombia, email contacto@smilecolombia.co.</p>
       <h3>What data we process and why</h3>
       <ul>
         <li>Contact details (name, phone, email, country and city) to reply to you, send your plan and coordinate your trip and appointments.</li>
@@ -630,13 +609,13 @@ footer li{margin-bottom:var(--s2)}
       <h3>Sensitive data</h3>
       <p>Photos, X-rays and health information are <b>sensitive data</b>. We only process them with your <b>prior, express and informed consent</b>, requested before any question about your health and before you send photos. <b>You are not required to consent to the processing of sensitive data</b> or to answer questions about it. Without it we can't do a remote assessment, but you can be assessed in person. We only share it with the dentist assessing or treating your case.</p>
       <h3>Separate consents</h3>
-      <p>We ask for each consent separately and none is pre-selected: (1) processing of your personal data; (2) processing of your sensitive health data; (3) sharing your data with the clinic and the dentist assessing or treating your case; (4) marketing and seasonal messages (optional); and (5) publication of your case (optional). Declining the optional ones does not affect your assessment. Reply STOP at any time to stop receiving messages.</p>
+      <p>When you write to us, we ask for each consent separately and expressly: (1) processing of your personal data; (2) processing of your sensitive health data; (3) sharing your data with the clinic and the dentist assessing or treating your case; (4) marketing and seasonal messages (optional); and (5) publication of your case (optional). Declining the optional ones does not affect your assessment. You can stop receiving messages at any time by writing to contacto@smilecolombia.co.</p>
       <h3>Minors</h3>
       <p>If you are under 18, consent must be given by your parent or legal guardian, who must provide proof of that status (Law 1581 of 2012, art. 7; Decree 1377 of 2013, art. 12). We respect the best interests of the minor and never publish cases or photos of minors.</p>
       <h3>Your rights</h3>
       <p>You may access, update, correct and delete your data; request proof of your consent; withdraw it; be informed about how your data is used; and file complaints with Colombia's Superintendence of Industry and Commerce (SIC) after first contacting us. Write to <b>contacto@smilecolombia.co</b>. We answer inquiries within 10 business days and claims within 15 business days.</p>
       <h3>International transfers</h3>
-      <p>We use providers that may store data outside Colombia (WhatsApp/Meta, Google, Cloudflare, Calendly, Tally, Neon and payment providers), in countries such as the United States or the European Union. When you use the WhatsApp button, Meta receives your number and the pre-filled message. Full list in the <a href="privacidad.html">data processing policy</a>. We list these providers so you can decide; sharing with the clinic and dentist is consented to separately.</p>
+      <p>We use providers that may store data outside Colombia (such as our email service, website hosting and payment providers), in countries such as the United States or the European Union. Full list in the <a href="privacidad.html">data processing policy</a>. We list these providers so you can decide; sharing with the clinic and dentist is consented to separately.</p>
       <h3>Full policy</h3>
       <p>Our full data processing policy is available at <a href="privacidad.html">privacidad.html</a> or on request at contacto@smilecolombia.co. This site has no forms of its own and uses no cookies of any kind; it only stores your language preference in your browser's local storage (localStorage), which you can clear at any time; Smile Colombia never publishes patient photos or testimonials without written consent.</p>
     </div>
@@ -652,15 +631,13 @@ footer li{margin-bottom:var(--s2)}
     <div class="foot">
       <div>
         <h4>Smile Colombia</h4>
-        <p><span data-l="es">Coordinación de tratamientos de ortodoncia y odontología general en Barranquilla (Atlántico, Colombia) para pacientes que viven en el exterior. Smile Colombia no presta servicios de salud.</span><span data-l="en">Coordination of orthodontic and general dental treatment in Colombia for patients living abroad. Smile Colombia does not provide health services.</span></p>
+        <p><span data-l="es">Coordinación de tratamientos de ortodoncia y odontología general en Barranquilla (Atlántico, Colombia) para pacientes que viven en el exterior. Smile Colombia no presta servicios de salud.</span><span data-l="en">Coordination of orthodontic and general dental treatment in Barranquilla (Atlántico, Colombia) for patients living abroad. Smile Colombia does not provide health services.</span></p>
       </div>
       <div>
         <h4><span data-l="es">Contacto</span><span data-l="en">Contact</span></h4>
         <ul>
-          <li><a class="wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener">WhatsApp<span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a></li>
-          <li>contacto@smilecolombia.co</li>
-          <li>Pendiente</li>
-          <li>Barranquilla, Atlántico, Colombia (dirección exacta pendiente)</li>
+          <li><a class="wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia">contacto@smilecolombia.co</a></li>
+          <li><span data-l="es">Atención y tratamientos en Barranquilla, Atlántico, Colombia</span><span data-l="en">Care and treatment in Barranquilla, Atlántico, Colombia</span></li>
         </ul>
       </div>
       <div>
@@ -670,36 +647,31 @@ footer li{margin-bottom:var(--s2)}
           <li><a href="terminos.html"><span data-l="es">Términos y condiciones</span><span data-l="en">Terms and conditions</span></a></li>
           <li><a href="reembolsos.html"><span data-l="es">Reembolsos y retracto</span><span data-l="en">Refunds and withdrawal</span></a></li>
           <li><a href="privacidad.html"><span data-l="es">Política de tratamiento de datos</span><span data-l="en">Data processing policy</span></a></li>
-          <li><a href="https://www.sic.gov.co" target="_blank" rel="noopener"><span data-l="es">Superintendencia de Industria y Comercio</span><span data-l="en">Superintendence of Industry and Commerce (SIC)</span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a></li>
+          <li><a href="https://www.sic.gov.co" target="_blank" rel="noopener" aria-label="Superintendencia de Industria y Comercio (se abre en una pestaña nueva)" data-aria-es="Superintendencia de Industria y Comercio (se abre en una pestaña nueva)" data-aria-en="Superintendence of Industry and Commerce (opens in a new tab)"><span data-l="es">Superintendencia de Industria y Comercio</span><span data-l="en">Superintendence of Industry and Commerce (SIC)</span></a></li>
         </ul>
       </div>
     </div>
-    <p class="legal">© <span id="year">2026</span> Smile Colombia S.A.S. (en constitución) · NIT Pendiente · <span data-l="es">SAS no prestadora de servicios de salud; recauda el valor del tratamiento como mandataria de Clínica aliada (pendiente verificación) (NIT Pendiente verificación, REPS Pendiente verificación).</span><span data-l="en">A non-healthcare SAS company; it collects the treatment price as agent of Clínica aliada (pendiente verificación) (Tax ID Pendiente verificación, REPS Pendiente verificación).</span> <span data-l="es">Precios orientativos sujetos a valoración clínica presencial. La información de este sitio no reemplaza la consulta con un odontólogo.</span><span data-l="en">Prices are estimates subject to an in-person clinical assessment. Information on this site does not replace a consultation with a dentist.</span></p>
+    <p class="legal">© <span id="year">2026</span> <span data-l="es">Smile Colombia S.A.S. (en constitución) · Sociedad no prestadora de servicios de salud; cobra el valor del tratamiento a nombre de la clínica aliada.</span><span data-l="en">Smile Colombia S.A.S. (company in formation) · Not a healthcare provider; it collects the treatment price on behalf of the partner clinic.</span> <span data-l="es">Precio de referencia; se confirma por escrito en tu valoración. La información de este sitio no reemplaza la consulta con un odontólogo.</span><span data-l="en">Reference price; confirmed in writing at your assessment. Information on this site does not replace a consultation with a dentist.</span></p>
     <div class="credits"><h4><span data-l="es">Créditos de fotos</span><span data-l="en">Photo credits</span></h4><ul><li><a href="https://www.pexels.com/photo/a-woman-smiling-with-braces-on-her-teeth-7090366/" target="_blank" rel="noopener">Polina</a> · <span data-l="es">Sonrisa con brackets</span><span data-l="en">Smile with braces</span> · <a href="https://pexels.com/license/" target="_blank" rel="noopener"><span data-l="es">Licencia Pexels</span><span data-l="en">Pexels License</span></a></li><li><a href="https://www.pexels.com/photo/treating-of-a-teeth-with-braces-6528909/" target="_blank" rel="noopener">cottonbro studio</a> · <span data-l="es">Control de ortodoncia</span><span data-l="en">Orthodontic check</span> · <a href="https://pexels.com/license/" target="_blank" rel="noopener"><span data-l="es">Licencia Pexels</span><span data-l="en">Pexels License</span></a></li><li><a href="https://unsplash.com/photos/dental-chair-with-equipment-in-a-clinic-T5si0dm2dGo" target="_blank" rel="noopener">Werapinthorn Jaijan</a> · <span data-l="es">Consultorio</span><span data-l="en">Dental clinic</span> · <a href="https://unsplash.com/license" target="_blank" rel="noopener"><span data-l="es">Licencia Unsplash</span><span data-l="en">Unsplash License</span></a></li><li><a href="https://www.pexels.com/photo/vibrant-carnival-costume-at-barranquilla-parade-36271940/" target="_blank" rel="noopener">Mister Edits</a> · <span data-l="es">Carnaval de Barranquilla</span><span data-l="en">Barranquilla Carnival</span> · <a href="https://pexels.com/license/" target="_blank" rel="noopener"><span data-l="es">Licencia Pexels</span><span data-l="en">Pexels License</span></a></li><li><a href="https://www.pexels.com/photo/aerial-view-of-magdalena-river-in-barranquilla-colombia-30937558/" target="_blank" rel="noopener">Carlos Mendoza</a> · <span data-l="es">Río Magdalena, Barranquilla</span><span data-l="en">Magdalena River, Barranquilla</span> · <a href="https://pexels.com/license/" target="_blank" rel="noopener"><span data-l="es">Licencia Pexels</span><span data-l="en">Pexels License</span></a></li><li><a href="https://www.pexels.com/photo/sunset-at-puerto-colombia-13780138/" target="_blank" rel="noopener">Kevin Kleber</a> · <span data-l="es">Atardecer en Puerto Colombia, Atlántico</span><span data-l="en">Sunset in Puerto Colombia, Atlántico</span> · <a href="https://pexels.com/license/" target="_blank" rel="noopener"><span data-l="es">Licencia Pexels</span><span data-l="en">Pexels License</span></a></li></ul><p><span data-l="es">Todas son fotos ilustrativas de stock de <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> y <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>: no muestran pacientes, odontólogos ni la clínica aliada de Smile Colombia.</span><span data-l="en">All are illustrative stock photos from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> and <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>: they do not show Smile Colombia patients, dentists or partner clinic.</span></p></div>
   </div>
 </footer>
 
-<a class="wa-float wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" title="Contacto"><span class="sr-only"><span data-l="es">Contacto por correo</span><span data-l="en">Email contact</span></span>
-  <span class="lbl" aria-hidden="true"><span data-l="es">Contacto</span><span data-l="en">Contact</span></span><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
-<span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
 
 <script>
 (function(){
-  // Contacto MVP: mailto (WhatsApp Business pendiente — no inventar número).
-  var WHATSAPP_NUMBER = "";
   var CONTACT_EMAIL = "contacto@smilecolombia.co";
 
   var MSG = {
     es: {
       base: "Hola Smile Colombia, vivo en el exterior y quiero mi valoración por fotos.",
       chequeo: "Hola Smile Colombia, me interesa el paquete Chequeo integral + plan.",
-      ortodoncia: "Hola Smile Colombia, me interesa el paquete Ortodoncia diáspora.",
+      ortodoncia: "Hola Smile Colombia, me interesa el paquete Ortodoncia en tus viajes.",
       express: "Hola Smile Colombia, me interesa el paquete Sonrisa express."
     },
     en: {
       base: "Hi Smile Colombia, I live abroad and I'd like a photo assessment.",
       chequeo: "Hi Smile Colombia, I'm interested in the Full check-up + plan package.",
-      ortodoncia: "Hi Smile Colombia, I'm interested in the Orthodontics for travelers package.",
+      ortodoncia: "Hi Smile Colombia, I'm interested in the Orthodontics on your trips package.",
       express: "Hi Smile Colombia, I'm interested in the Express smile package."
     }
   };
@@ -712,10 +684,6 @@ footer li{margin-bottom:var(--s2)}
 
   function waHref(lang, pkg){
     var text = (MSG[lang][pkg] || MSG[lang].base);
-    var num = String(WHATSAPP_NUMBER || "").replace(/\D/g, "");
-    if (num) {
-      return "https://wa.me/" + num + "?text=" + encodeURIComponent(text);
-    }
     var subj = lang === "en" ? "Smile Colombia — photo assessment" : "Smile Colombia — valoración por fotos";
     return "mailto:" + CONTACT_EMAIL + "?subject=" + encodeURIComponent(subj) + "&body=" + encodeURIComponent(text);
   }
@@ -731,6 +699,9 @@ footer li{margin-bottom:var(--s2)}
     });
     document.querySelectorAll(".wa-link").forEach(function(a){
       a.href = waHref(lang, a.getAttribute("data-pkg"));
+    });
+    document.querySelectorAll("[data-aria-es]").forEach(function(el){
+      el.setAttribute("aria-label", el.getAttribute("data-aria-" + lang));
     });
     document.querySelectorAll("img[data-alt-es]").forEach(function(im){
       im.alt = im.getAttribute("data-alt-" + lang) || im.alt;
@@ -786,9 +757,6 @@ footer li{margin-bottom:var(--s2)}
   document.getElementById("year").textContent = new Date().getFullYear();
   setLang(initialLang());
 
-  if (!String(WHATSAPP_NUMBER || "").replace(/\D/g, "")) {
-    console.info("Smile Colombia MVP: WhatsApp Business pendiente; CTAs usan mailto a " + CONTACT_EMAIL);
-  }
 })();
 </script>
 </body>
