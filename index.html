@@ -5,14 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Smile Colombia · Ortodoncia y odontología general en Colombia</title>
 <meta name="description" content="Coordinamos tu tratamiento de ortodoncia u odontología general en Colombia mientras vives en el exterior. Valoración por fotos con objetivo de plan escrito en 48 horas hábiles.">
-<meta name="theme-color" content="#0B5C45">
+<meta name="theme-color" content="#151413">
 <meta property="og:title" content="Smile Colombia · Ortodoncia y odontología general en Colombia">
 <meta property="og:description" content="Valoración por fotos en WhatsApp y objetivo de plan escrito en 48 horas hábiles, antes de comprar tiquetes.">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%A6%B7%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%23C43D0E'/%3E%3Ctext x='16' y='23' text-anchor='middle' font-family='Arial Narrow,Arial,sans-serif' font-weight='900' font-size='20' fill='%23fff'%3ES%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 
 <!--
   Smile Colombia · Landing estática (sin build). Raíz = esta carpeta para Cloudflare Pages Direct Upload.
@@ -21,211 +21,237 @@
 -->
 <style>
 :root{
-  --bg:#F7F1E8; --surface:#FFFCFA; --ink:#1C2E24; --muted:#5C6B62; --line:#E0D4C4;
-  --brand:#0B5C45; --brand-2:#0B5C45; --accent:#C4784A; --gold:#C9A066; --soft:#E4EDE6;
-  --wa:#177a42; --wa-dark:#125f33; --focus:#1C2E24; --footer:#14241C;
-  --font-display:"Fraunces",Georgia,"Times New Roman",serif;
-  --font-body:"Figtree",system-ui,sans-serif;
-  --radius:14px; --shadow:0 12px 32px rgba(28,46,36,.08); --max:1120px;
+  /* Tokens v2 — 1 neutro + 1 acento */
+  --bone:#F2F0EB; --paper:#FAF9F6; --ink:#151413; --muted:#58554F; --rule:#151413; --hair:#CFCBC2;
+  --accent:#C43D0E; --accent-ink:#A33208; --on-accent:#FFFFFF; --focus:#151413;
+  --font-display:"Archivo","Arial Narrow",Arial,sans-serif;
+  --font-body:"Archivo",Arial,sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+  /* escala 4/8 */
+  --s1:4px;--s2:8px;--s3:12px;--s4:16px;--s5:24px;--s6:32px;--s7:48px;--s8:64px;--s9:96px;
+  /* escala tipográfica (1.25) */
+  --t-mono:.75rem;--t-sm:.875rem;--t-base:1rem;--t-md:1.125rem;--t-lg:1.5rem;--t-xl:2.25rem;--t-2xl:clamp(2.5rem,6.4vw,5rem);
+  --r-0:0;--r-pill:999px;--bw:1px;--max:1200px;
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
-body{margin:0;font-family:var(--font-body);color:var(--ink);background:var(--bg);line-height:1.65;font-size:17px;overflow-wrap:break-word}
+body{margin:0;font-family:var(--font-body);font-variation-settings:"wdth" 100;color:var(--ink);background:var(--bone);line-height:1.6;font-size:var(--t-base);overflow-wrap:break-word}
 img{max-width:100%;display:block}
-a{color:var(--brand)}
-h1,h2,h3{font-family:var(--font-display);font-weight:600;line-height:1.2;margin:0 0 .5em;letter-spacing:-.02em}
-h1{font-size:clamp(2.05rem,5.2vw,3.35rem);font-weight:700}
-h2{font-size:clamp(1.65rem,3.6vw,2.4rem)}
-h3{font-size:1.22rem;letter-spacing:-.01em}
-p{margin:0 0 1em}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-section{padding:76px 0}
-.eyebrow{display:inline-block;font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-bottom:.75em;font-family:var(--font-body)}
-.lead{font-size:1.12rem;color:var(--muted);max-width:58ch}
-.center{text-align:center}.center .lead{margin-left:auto;margin-right:auto}
-.skip{position:absolute;left:-999px;top:0;background:#000;color:#fff;padding:8px 12px;z-index:100}
-.skip:focus{left:8px;top:8px}
-
+a{color:var(--accent-ink);text-underline-offset:3px;text-decoration-thickness:1px}
+a:hover{text-decoration-thickness:2px}
+h1,h2,h3,h4{font-family:var(--font-display);margin:0 0 var(--s4);line-height:.95;text-transform:uppercase;font-weight:900;font-stretch:75%;font-variation-settings:"wdth" 75;letter-spacing:-.01em}
+h1{font-size:var(--t-2xl)}
+h2{font-size:clamp(2rem,4.6vw,3.5rem)}
+h3{font-size:var(--t-lg);line-height:1}
+p{margin:0 0 var(--s4)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 var(--s5)}
+.mono,.eyebrow,.tag,.spec,.meta{font-family:var(--font-mono);font-size:var(--t-mono);letter-spacing:.06em;text-transform:uppercase;font-weight:500}
+.skip{position:absolute;left:-999px;top:0;background:var(--ink);color:var(--bone);padding:var(--s2) var(--s3);z-index:100}
+.skip:focus{left:var(--s2);top:var(--s2)}
 html[lang="es"] [data-l="en"], html[lang="en"] [data-l="es"]{display:none!important}
-
-/* Header */
-header{position:sticky;top:0;z-index:50;background:rgba(247,241,232,.9);backdrop-filter:saturate(1.3) blur(10px);-webkit-backdrop-filter:saturate(1.3) blur(10px);border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
-.logo{font-family:var(--font-display);font-weight:700;font-size:1.4rem;color:var(--brand);text-decoration:none;white-space:nowrap;letter-spacing:-.02em}
-.logo span{color:var(--accent);font-weight:500}
-.menu{display:flex;gap:22px;list-style:none;margin:0;padding:0}
-.menu a{color:var(--ink);text-decoration:none;font-size:.94rem;font-weight:500}
-.menu a:hover{color:var(--brand)}
-.nav-right{display:flex;align-items:center;gap:10px}
-.lang{display:inline-flex;border:1.5px solid var(--line);border-radius:8px;overflow:hidden;background:var(--surface)}
-.lang button{border:0;background:transparent;padding:6px 12px;font:inherit;font-size:.85rem;font-weight:700;color:var(--muted);cursor:pointer}
-.lang button[aria-pressed="true"]{background:var(--brand);color:#fff}
-:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
-a:focus-visible,button:focus-visible,summary:focus-visible,.menu a:focus-visible,.logo:focus-visible,.wa-float:focus-visible,.lang button:focus-visible,.btn:focus-visible{outline:3px solid var(--focus);outline-offset:2px;border-radius:4px}
-.btn:focus-visible,.wa-float:focus-visible{border-radius:999px;box-shadow:0 0 0 2px var(--bg)}
-footer :focus-visible,.cta :focus-visible{outline-color:#fff}
 .sr-only{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.menu-toggle{display:none;border:1.5px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:6px 12px;font:inherit;font-size:.9rem;font-weight:700;cursor:pointer}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
+.btn:focus-visible,.lang button:focus-visible,.pill:focus-visible{border-radius:var(--r-pill)}
+footer :focus-visible,.cta :focus-visible,.mvp :focus-visible{outline-color:var(--bone)}
+/* MVP banner */
+.mvp{background:var(--ink);color:var(--bone);font-family:var(--font-mono);font-size:var(--t-mono);letter-spacing:.04em;text-align:center;padding:var(--s2) var(--s4);line-height:1.5}
+.mvp b{color:var(--bone);background:var(--accent);padding:0 var(--s1)}
+/* Header / nav pill */
+header{position:sticky;top:0;z-index:50;background:var(--bone);border-bottom:var(--bw) solid var(--rule)}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:var(--s4);min-height:64px;flex-wrap:wrap}
+.logo{display:inline-flex;align-items:center;gap:var(--s2);font-family:var(--font-display);font-weight:900;font-variation-settings:"wdth" 75;text-transform:uppercase;font-size:1.375rem;color:var(--ink);text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+.logo .mark{display:inline-grid;place-items:center;width:28px;height:28px;background:var(--accent);color:var(--on-accent);font-size:1rem;border-radius:var(--r-pill)}
+.logo small{font-family:var(--font-mono);font-size:var(--t-mono);font-weight:500;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.menu{display:flex;gap:var(--s1);list-style:none;margin:0;padding:var(--s1);border:var(--bw) solid var(--rule);border-radius:var(--r-pill)}
+.menu a{display:block;color:var(--ink);text-decoration:none;font-size:var(--t-sm);font-weight:600;padding:var(--s2) var(--s4);border-radius:var(--r-pill)}
+.menu a:hover{background:var(--ink);color:var(--bone)}
+.nav-right{display:flex;align-items:center;gap:var(--s2)}
+.lang{display:inline-flex;border:var(--bw) solid var(--rule);border-radius:var(--r-pill);padding:2px}
+.lang button{border:0;background:transparent;padding:var(--s1) var(--s3);font-family:var(--font-mono);font-size:var(--t-mono);font-weight:700;color:var(--ink);cursor:pointer;border-radius:var(--r-pill)}
+.lang button[aria-pressed="true"]{background:var(--ink);color:var(--bone)}
+.menu-toggle{display:none;align-items:center;gap:var(--s2);border:var(--bw) solid var(--rule);background:transparent;color:var(--ink);border-radius:var(--r-pill);padding:var(--s2) var(--s4);font-family:var(--font-mono);font-size:var(--t-mono);text-transform:uppercase;font-weight:700;cursor:pointer}
+.menu-toggle svg{width:14px;height:14px}
+/* Buttons pill + icon */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:var(--s3);padding:var(--s3) var(--s3) var(--s3) var(--s5);border-radius:var(--r-pill);font-weight:700;text-decoration:none;border:var(--bw) solid var(--ink);cursor:pointer;font-size:var(--t-base);font-family:var(--font-body);transition:background .15s,color .15s}
+.btn .ico{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:var(--r-pill);background:var(--bone);color:var(--ink);flex:none}
+.btn .ico svg{width:14px;height:14px}
+.btn-wa{background:var(--accent);color:var(--on-accent);border-color:var(--accent)}
+.btn-wa:hover{background:var(--ink);border-color:var(--ink)}
+.btn-ghost{background:transparent;color:var(--ink)}
+.btn-ghost .ico{background:var(--ink);color:var(--bone)}
+.btn-ghost:hover{background:var(--ink);color:var(--bone)}
+.btn-sm{padding:var(--s2) var(--s4);font-size:var(--t-sm)}
+.btn svg.wa{width:18px;height:18px}
+/* Spec strip */
+.spec{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:var(--bw) solid var(--rule)}
+.spec div{padding:var(--s3) var(--s5);border-right:var(--bw) solid var(--rule);color:var(--ink)}
+.spec div:last-child{border-right:0}
+.spec dt{color:var(--muted);margin:0 0 2px}
+.spec dd{margin:0;font-weight:700}
+/* Frames with + corners */
+.frame{position:relative;border:var(--bw) solid var(--rule)}
+.frame::before,.frame::after{content:"+";position:absolute;font-family:var(--font-mono);font-size:16px;line-height:1;color:var(--ink);background:var(--bone);padding:0 2px}
+.frame::before{top:-9px;left:-7px}
+.frame::after{bottom:-9px;right:-7px}
+/* Section heads numbered */
+section{padding:var(--s9) 0;border-bottom:var(--bw) solid var(--rule)}
+.sec-head{display:grid;grid-template-columns:160px 1fr;gap:var(--s5);align-items:start;margin-bottom:var(--s7);border-top:var(--bw) solid var(--rule);padding-top:var(--s4)}
+.sec-head .num{font-family:var(--font-display);font-weight:900;font-variation-settings:"wdth" 75;font-size:clamp(3rem,7vw,5.5rem);line-height:.8;color:var(--accent)}
+.eyebrow{display:block;color:var(--muted);margin-bottom:var(--s3)}
+.lead{font-size:var(--t-md);color:var(--muted);max-width:60ch}
+footer{background:var(--ink);color:#A8A49C;font-size:var(--t-sm);padding:var(--s8) 0 var(--s9)}
+footer a{color:var(--bone)}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 
-/* Buttons — less pill factory */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:10px;font-weight:700;text-decoration:none;border:2px solid transparent;cursor:pointer;font-size:1rem;font-family:var(--font-body);transition:transform .15s,background .15s,box-shadow .15s}
-.btn:hover{transform:translateY(-1px)}
-.btn-wa{background:var(--wa);color:#fff;border-radius:999px}.btn-wa:hover{background:var(--wa-dark)}
-.btn-ghost{background:transparent;color:var(--brand);border-color:var(--brand);border-radius:10px}
-.btn-sm{padding:8px 14px;font-size:.9rem}
-.btn svg{width:20px;height:20px;flex:none}
-
-/* Hero — asymmetric + editorial */
-.hero{padding:72px 0 64px;position:relative;overflow:hidden}
-.hero::before{content:"";position:absolute;inset:0;background:
-  radial-gradient(900px 420px at 92% 8%,rgba(11,92,69,.09),transparent 55%),
-  radial-gradient(600px 300px at 8% 90%,rgba(196,120,74,.08),transparent 50%);
-  pointer-events:none}
-.hero-grid{display:grid;grid-template-columns:1.35fr .85fr;gap:40px 56px;align-items:start;position:relative}
-.hero h1{max-width:16ch}
-.hero h1::after{content:"";display:block;width:4.5rem;height:3px;margin-top:.55em;background:var(--accent);border-radius:2px;transform:rotate(-1.5deg)}
-.hero .ctas{display:flex;flex-wrap:wrap;gap:12px;margin:28px 0 18px}
-.hero small{color:var(--muted);display:block;max-width:48ch}
-.hero-card{background:var(--surface);border:1.5px solid var(--line);border-radius:6px 22px 10px 18px;padding:28px 26px;box-shadow:var(--shadow);margin-top:1.5rem;position:relative}
-.hero-card::before{content:"";position:absolute;top:-8px;right:22px;width:48px;height:10px;background:var(--gold);border-radius:2px 8px 2px 6px;opacity:.85;transform:rotate(2deg)}
-.hero-card ul{list-style:none;padding:0;margin:0}
-.hero-card li{display:flex;gap:12px;padding:13px 0;border-bottom:1px dashed var(--line)}
-.hero-card li:last-child{border-bottom:0}
-.check{flex:none;width:26px;height:26px;border-radius:6px;background:var(--soft);color:var(--brand);display:grid;place-items:center;font-weight:800;font-size:.85rem;font-family:var(--font-display)}
-
-/* Trust bar */
-.trust{padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--surface);position:relative}
-.trust::after{content:"";display:block;height:3px;background:linear-gradient(90deg,var(--brand),var(--gold),var(--accent));opacity:.55}
-.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px 28px}
-.trust-grid div{font-size:.93rem;color:var(--muted);padding-left:14px;border-left:2px solid var(--gold)}
-.trust-grid strong{display:block;color:var(--ink);font-size:1rem;font-family:var(--font-display);font-weight:600;margin-bottom:.15em}
-
-/* Packages — varied cards */
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:40px;align-items:stretch}
-.card{background:var(--surface);border:1.5px solid var(--line);padding:28px;display:flex;flex-direction:column;box-shadow:var(--shadow)}
-.card:nth-child(1){border-radius:4px 20px 8px 16px}
-.card:nth-child(2){border-radius:18px 6px 16px 8px}
-.card:nth-child(3){border-radius:10px 14px 22px 6px}
-.card.featured{border:2px solid var(--brand);box-shadow:0 14px 36px rgba(11,92,69,.12);position:relative}
-.card.featured::after{content:"";position:absolute;left:0;top:18px;bottom:18px;width:4px;background:var(--accent);border-radius:0 3px 3px 0}
-.tag{align-self:flex-start;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;background:var(--soft);color:var(--brand);padding:5px 12px;margin-bottom:14px;border:1.5px solid rgba(11,92,69,.18);border-radius:3px 12px 4px 10px;transform:rotate(-.8deg)}
-.card.featured .tag{background:rgba(196,120,74,.12);color:var(--accent);border-color:rgba(196,120,74,.35)}
-.price{margin:10px 0 4px;font-size:.9rem;color:var(--muted)}
-.price b{display:block;font-size:2.05rem;color:var(--ink);letter-spacing:-.02em;font-family:var(--font-display);font-weight:700}
-.fee{font-size:.9rem;color:var(--muted);margin-bottom:16px;overflow-wrap:anywhere}
-.card ul{padding-left:20px;margin:0 0 16px;font-size:.96rem}
-.card li{margin-bottom:6px}
-.card .no{font-size:.88rem;color:var(--muted);border-top:1px dashed var(--line);padding-top:12px;margin-top:auto}
-.card .btn{margin-top:16px}
-.note{margin-top:28px;font-size:.9rem;color:var(--muted);background:var(--surface);border:1.5px solid var(--line);border-left:4px solid var(--gold);border-radius:4px 12px 8px 4px;padding:14px 18px}
-
-/* How it works — editorial steps (serif numbers, not 5 identical circles) */
-.alt{background:var(--soft);position:relative}
-.alt::before{content:"";position:absolute;inset:0;opacity:.35;pointer-events:none;background-image:
-  repeating-linear-gradient(0deg,transparent,transparent 27px,rgba(11,92,69,.04) 27px,rgba(11,92,69,.04) 28px),
-  repeating-linear-gradient(90deg,transparent,transparent 27px,rgba(196,120,74,.035) 27px,rgba(196,120,74,.035) 28px)}
-.alt > .wrap{position:relative}
-.steps{list-style:none;padding:0;margin:44px 0 0;display:grid;grid-template-columns:repeat(5,1fr);gap:16px;counter-reset:s}
-.steps li{background:var(--surface);padding:22px 18px 24px;position:relative;counter-increment:s;border:1.5px solid var(--line);min-height:100%}
-.steps li:nth-child(1){border-radius:4px 16px 8px 12px}
-.steps li:nth-child(2){border-radius:14px 4px 12px 6px;margin-top:12px}
-.steps li:nth-child(3){border-radius:8px 18px 6px 14px}
-.steps li:nth-child(4){border-radius:16px 8px 14px 4px;margin-top:18px}
-.steps li:nth-child(5){border-radius:6px 12px 18px 8px;margin-top:6px}
-.steps li::before{content:counter(s,decimal-leading-zero);display:block;font-family:var(--font-display);font-weight:700;font-size:1.85rem;color:var(--brand);line-height:1;margin-bottom:12px;letter-spacing:-.03em;opacity:.9}
-.steps li:nth-child(even)::before{color:var(--accent)}
-.steps h3{font-size:1.05rem}
-.steps p{font-size:.93rem;color:var(--muted);margin:0}
-.model{margin-top:40px;display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
-.model div{background:var(--surface);padding:26px;border:1.5px solid var(--line)}
-.model div:first-child{border-radius:6px 18px 10px 14px}
-.model div:last-child{border-radius:16px 6px 14px 8px;border-top:3px solid var(--gold)}
-
+/* Hero */
+.hero{padding:var(--s8) 0 0;border-bottom:var(--bw) solid var(--rule)}
+.hero-grid{display:grid;grid-template-columns:7fr 5fr;gap:0;border-top:0}
+.hero-main{padding:0 var(--s7) var(--s8) 0;border-right:var(--bw) solid var(--rule)}
+.hero h1{grid-column:1 / -1;max-width:22ch;margin-bottom:var(--s7);font-size:clamp(2.5rem,6.2vw,5.5rem)}
+.hero-title{grid-column:1 / -1}
+.hero-title h1{max-width:22ch}
+.hero h1 .w{display:inline-block;opacity:0;transform:translateY(.35em);animation:wordin .5s cubic-bezier(.2,.7,.2,1) forwards}
+@keyframes wordin{to{opacity:1;transform:none}}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:var(--s3);margin:var(--s6) 0 var(--s4)}
+.hero small{color:var(--muted);display:block;max-width:52ch;font-size:var(--t-sm)}
+.hero-card{margin:0 0 var(--s8) var(--s6);padding:var(--s5);background:var(--paper);align-self:start}
+.hero-card .mono{display:block;color:var(--muted);border-bottom:var(--bw) solid var(--rule);padding-bottom:var(--s2);margin-bottom:var(--s2)}
+.hero-card ul,.list-check{list-style:none;padding:0;margin:0;counter-reset:k}
+.hero-card li,.list-check li{display:grid;grid-template-columns:28px 1fr;gap:var(--s3);padding:var(--s3) 0;border-bottom:var(--bw) solid var(--hair);font-size:var(--t-sm)}
+.hero-card li:last-child,.list-check li:last-child{border-bottom:0}
+.check{display:grid;place-items:center;width:24px;height:24px;border:var(--bw) solid var(--ink);border-radius:var(--r-pill);color:var(--ink)}
+.check svg{width:12px;height:12px}
+/* Trust strip */
+.trust{border-bottom:var(--bw) solid var(--rule);background:var(--paper)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr);padding:0}
+.trust-grid>div{padding:var(--s5);border-right:var(--bw) solid var(--rule);font-size:var(--t-sm);color:var(--muted)}
+.trust-grid>div:last-child{border-right:0}
+.trust-grid strong{display:block;color:var(--ink);font-family:var(--font-mono);font-size:var(--t-mono);text-transform:uppercase;letter-spacing:.06em;margin-bottom:var(--s2)}
+.trust-grid strong::before{content:"+ ";color:var(--accent-ink)}
+/* Bento packages */
+.cards{display:grid;grid-template-columns:repeat(12,1fr);grid-template-rows:auto auto;gap:var(--s4)}
+.card{display:flex;flex-direction:column;padding:var(--s5);background:var(--paper)}
+.card.featured{grid-column:1 / span 7;grid-row:1 / span 2;background:var(--ink);color:var(--bone);order:-1}
+.card.featured::before,.card.featured::after{background:var(--bone);color:var(--ink)}
+.card:not(.featured){grid-column:8 / span 5}
+.card.featured h3{font-size:var(--t-xl)}
+.tag{align-self:flex-start;border:var(--bw) solid currentColor;border-radius:var(--r-pill);padding:var(--s1) var(--s3);margin-bottom:var(--s4)}
+.card.featured .tag{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.price{margin:var(--s2) 0 var(--s1);font-family:var(--font-mono);font-size:var(--t-mono);text-transform:uppercase;letter-spacing:.06em;color:var(--muted);display:flex;flex-wrap:wrap;align-items:baseline;gap:0 var(--s3)}
+.price b{flex-basis:100%;font-family:var(--font-display);font-variation-settings:"wdth" 75;font-weight:900;font-size:clamp(2.5rem,5vw,4rem);line-height:1;letter-spacing:-.01em;color:var(--ink);text-transform:none}
+.card.featured .price,.card.featured .fee,.card.featured .no{color:#C9C5BC}
+.card.featured .price b{color:var(--bone)}
+.fee{font-size:var(--t-sm);color:var(--muted);margin-bottom:var(--s4);overflow-wrap:anywhere}
+.card ul{padding-left:var(--s5);margin:0 0 var(--s4);font-size:var(--t-sm)}
+.card li{margin-bottom:var(--s1)}
+.card .no{font-size:var(--t-sm);color:var(--muted);border-top:var(--bw) solid var(--hair);padding-top:var(--s3);margin-top:auto}
+.card .btn{margin-top:var(--s4);align-self:flex-start}
+.card.featured .btn-wa:hover{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+.note{margin-top:var(--s6);font-size:var(--t-sm);color:var(--muted);border-left:3px solid var(--accent);padding:var(--s2) 0 var(--s2) var(--s4);max-width:90ch}
+/* Steps as spec rows */
+.steps{list-style:none;padding:0;margin:0;counter-reset:s;border-top:var(--bw) solid var(--rule)}
+.steps li{display:grid;grid-template-columns:160px 1fr 1.4fr;gap:var(--s5);padding:var(--s5) 0;border-bottom:var(--bw) solid var(--rule);counter-increment:s;align-items:baseline}
+.steps li::before{content:counter(s,decimal-leading-zero) " /05";font-family:var(--font-mono);font-size:var(--t-mono);color:var(--accent-ink);font-weight:700}
+.steps h3{margin:0}
+.steps p{margin:0;color:var(--muted);font-size:var(--t-sm)}
+.model{margin-top:var(--s7);display:grid;grid-template-columns:8fr 4fr;gap:var(--s4)}
+.model>div{padding:var(--s5);background:var(--paper)}
+.model>div:last-child{background:var(--accent);color:var(--on-accent)}
+.model>div:last-child::before,.model>div:last-child::after{background:var(--bone)}
+.model ul{padding-left:var(--s5);font-size:var(--t-sm)}
+.model li{margin-bottom:var(--s2)}
 /* Guarantee */
-.two{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:start}
-.list-check{list-style:none;padding:0;margin:0}
-.list-check li{display:flex;gap:12px;margin-bottom:14px}
-.team{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.member{background:var(--surface);border:1.5px solid var(--line);padding:20px;border-radius:8px 16px 10px 6px}
-.member:nth-child(2){border-radius:14px 6px 8px 16px}
-.member .avatar{width:56px;height:56px;border-radius:40% 60% 55% 45%;background:var(--soft);display:grid;place-items:center;font-size:1.4rem;margin-bottom:10px;border:1.5px dashed rgba(11,92,69,.25)}
-.member small{display:block;color:var(--muted);font-size:.85rem}
-
+.two{display:grid;grid-template-columns:7fr 5fr;gap:var(--s7);align-items:start}
+.team{display:grid;grid-template-columns:1fr 1fr;gap:0;border:var(--bw) solid var(--rule)}
+.member{padding:var(--s4);background:var(--paper)}
+.member+.member{border-left:var(--bw) solid var(--rule)}
+.member .avatar{width:48px;height:48px;border:var(--bw) dashed var(--ink);border-radius:var(--r-pill);display:grid;place-items:center;margin-bottom:var(--s3)}
+.member .avatar svg{width:22px;height:22px}
+.member small{display:block;color:var(--muted);font-size:var(--t-sm)}
+.aside-note{font-size:var(--t-sm);color:var(--muted)}
 /* FAQ */
-.faq{max-width:820px;margin:36px auto 0}
-details{background:var(--surface);border:1.5px solid var(--line);border-radius:6px 14px 8px 10px;margin-bottom:12px;padding:0 20px}
-details:nth-child(even){border-radius:12px 6px 14px 8px}
-summary{cursor:pointer;font-weight:700;padding:18px 28px 18px 0;list-style:none;position:relative;font-family:var(--font-display);font-size:1.05rem}
+.faq{border-top:var(--bw) solid var(--rule)}
+details{border-bottom:var(--bw) solid var(--rule)}
+summary{cursor:pointer;font-weight:700;padding:var(--s5) var(--s7) var(--s5) 0;list-style:none;position:relative;font-size:var(--t-md)}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"+";position:absolute;right:0;top:14px;font-size:1.35rem;color:var(--brand);font-family:var(--font-body);font-weight:500}
-details[open] summary::after{content:"–"}
-details p{color:var(--muted);margin:0 0 18px}
-
-/* Privacy block */
-.privacy{background:var(--surface);border-top:1px solid var(--line)}
-.privacy-box{max-width:900px;margin:0 auto;font-size:.95rem}
-.privacy-box h3{margin-top:1.4em;font-size:1.1rem}
-.privacy-box ul{padding-left:20px}
-
+summary::after{content:"+";position:absolute;right:0;top:50%;transform:translateY(-50%);width:32px;height:32px;display:grid;place-items:center;border:var(--bw) solid var(--ink);border-radius:var(--r-pill);font-family:var(--font-mono);font-weight:500}
+details[open] summary::after{content:"−";background:var(--ink);color:var(--bone)}
+details p{color:var(--muted);margin:0 0 var(--s5);max-width:72ch}
 /* CTA */
-.cta{background:var(--brand);color:#fff;text-align:center;position:relative;overflow:hidden}
-.cta::before{content:"";position:absolute;inset:0;opacity:.12;background-image:repeating-linear-gradient(-18deg,transparent,transparent 18px,rgba(255,255,255,.4) 18px,rgba(255,255,255,.4) 19px);pointer-events:none}
-.cta .wrap{position:relative}
-.cta .lead{color:#D5E8DE}
-.cta h2{color:#fff}
-.cta .btn-wa{box-shadow:0 8px 24px rgba(0,0,0,.2)}
-
+.cta{background:var(--accent);color:var(--on-accent);border-bottom:0}
+.cta h2{color:var(--on-accent);font-size:clamp(2.5rem,8vw,6.5rem);max-width:12ch}
+.cta .lead{color:var(--on-accent)}
+.cta .btn-wa{background:var(--ink);border-color:var(--ink);color:var(--bone)}
+.cta .btn-wa:hover{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+.cta-grid{display:grid;grid-template-columns:1fr auto;gap:var(--s5);align-items:end}
+/* Privacy */
+.privacy{background:var(--paper)}
+.privacy-box{max-width:820px;font-size:var(--t-sm)}
+.privacy-box h2{font-size:var(--t-xl)}
+.privacy-box h3{margin-top:var(--s6);font-size:var(--t-md);font-family:var(--font-mono);font-variation-settings:normal;font-weight:700;letter-spacing:.04em}
+.privacy-box ul{padding-left:var(--s5)}
 /* Footer */
-footer{background:var(--footer);color:#B8C9BE;font-size:.9rem;padding:44px 0 100px}
-footer a{color:#E8F2EC}
-.foot{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:28px}
-footer h4{color:#fff;margin:0 0 10px;font-size:1.05rem;font-family:var(--font-display);font-weight:600}
+.foot{display:grid;grid-template-columns:2fr 1fr 1fr;gap:var(--s6);border-top:var(--bw) solid #3A3835;padding-top:var(--s5)}
+footer h4{color:var(--bone);margin:0 0 var(--s3);font-family:var(--font-mono);font-variation-settings:normal;font-size:var(--t-mono);letter-spacing:.06em;font-weight:700}
 footer ul{list-style:none;padding:0;margin:0}
-footer li{margin-bottom:6px}
-.legal{margin-top:28px;border-top:1px solid #2A3F34;padding-top:18px;font-size:.82rem}
-
-/* WA float */
-.wa-float{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--wa);display:grid;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
-.wa-float:hover{background:var(--wa-dark)}
-.wa-float svg{width:32px;height:32px}
-
+footer li{margin-bottom:var(--s2)}
+.foot-word{font-family:var(--font-display);font-weight:900;font-variation-settings:"wdth" 62;text-transform:uppercase;font-size:clamp(3.5rem,15vw,13rem);line-height:.8;color:var(--bone);margin:0 0 var(--s6);letter-spacing:-.02em}
+.foot-word span{color:var(--accent)}
+.legal{margin-top:var(--s6);border-top:var(--bw) solid #3A3835;padding-top:var(--s4);font-size:var(--t-mono);font-family:var(--font-mono);line-height:1.7}
+/* Float */
+.wa-float{position:fixed;right:var(--s4);bottom:var(--s4);z-index:60;height:48px;padding:0 var(--s4);border-radius:var(--r-pill);background:var(--ink);color:var(--bone);display:inline-flex;align-items:center;gap:var(--s2);border:var(--bw) solid var(--bone);font-family:var(--font-mono);font-size:var(--t-mono);text-transform:uppercase;font-weight:700;text-decoration:none}
+.wa-float:hover{background:var(--accent)}
+.wa-float svg{width:18px;height:18px}
 /* Responsive */
-@media (max-width:980px){
-  .menu-toggle{display:inline-flex;align-items:center;gap:6px}
+@media (max-width:1024px){
+  .menu-toggle{display:inline-flex}
   .menu{display:none}
-  .menu.open{display:flex;flex-direction:column;gap:0;position:absolute;left:0;right:0;top:68px;background:var(--bg);border-bottom:1px solid var(--line);padding:8px 20px 16px;box-shadow:var(--shadow)}
-  .menu.open a{display:block;padding:12px 0}
+  .menu.open{display:flex;flex-direction:column;position:absolute;left:var(--s5);right:var(--s5);top:calc(100% + var(--s2));background:var(--bone);border-radius:24px;padding:var(--s2)}
+  .menu.open a{padding:var(--s3) var(--s4)}
+  nav{position:static}
+  header .nav{position:relative}
+}
+@media (max-width:900px){
   .hero-grid,.two,.model{grid-template-columns:1fr}
-  .hero-card{margin-top:0}
+  .hero-main{border-right:0;padding-right:0;padding-bottom:var(--s6)}
+  .hero-card{margin:0 0 var(--s7)}
   .cards{grid-template-columns:1fr}
-  .steps{grid-template-columns:1fr 1fr}
-  .steps li:nth-child(n){margin-top:0}
-  .trust-grid{grid-template-columns:1fr 1fr}
-  .foot{grid-template-columns:1fr}
+  .card.featured,.card:not(.featured){grid-column:auto;grid-row:auto}
+  .trust-grid,.spec{grid-template-columns:1fr 1fr}
+  .trust-grid>div:nth-child(2n),.spec div:nth-child(2n){border-right:0}
+  .trust-grid>div:nth-child(-n+2),.spec div:nth-child(-n+2){border-bottom:var(--bw) solid var(--rule)}
+  .steps li{grid-template-columns:1fr;gap:var(--s2)}
+  .sec-head{grid-template-columns:1fr;gap:var(--s3)}
+  .foot,.cta-grid{grid-template-columns:1fr}
 }
 @media (max-width:560px){
-  body{font-size:16px}
-  section{padding:56px 0}
-  .steps,.team,.trust-grid{grid-template-columns:1fr}
+  .wrap{padding:0 var(--s4)}
+  section{padding:var(--s8) 0}
+  .team,.trust-grid{grid-template-columns:1fr}
+  .member+.member{border-left:0;border-top:var(--bw) solid var(--rule)}
+  .trust-grid>div{border-right:0;border-bottom:var(--bw) solid var(--rule)}
   .nav .btn-sm{display:none}
-  .hero .ctas .btn{width:100%}
+  .hero .ctas .btn{width:100%;justify-content:space-between}
+  .logo small{display:none}
+  .spec div{padding:var(--s2) var(--s4)}
+  .wa-float .lbl{display:none}
 }
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+@media (prefers-reduced-motion:reduce){.hero h1 .w{opacity:1;transform:none;animation:none}}
 </style>
 </head>
 <body>
 <a class="skip" href="#main"><span data-l="es">Saltar al contenido</span><span data-l="en">Skip to content</span></a>
 
-<div id="mvp-aviso" role="status" style="background:#0B5C45;color:#E4EDE6;font-size:.85rem;text-align:center;padding:8px 16px;line-height:1.4">
+<div id="mvp-aviso" class="mvp" role="status">
   <span data-l="es"><b>MVP en validación</b> · Precios orientativos de ejemplo (no cotización). Marca provisional. Contacto por correo mientras activamos WhatsApp Business.</span>
   <span data-l="en"><b>MVP in validation</b> · Sample estimated prices (not a quote). Provisional brand. Email contact while we activate WhatsApp Business.</span>
 </div>
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#inicio" aria-label="Smile Colombia">Smile Colombia<span>.</span></a>
+    <a class="logo" href="#inicio" aria-label="Smile Colombia"><span class="mark" aria-hidden="true">S</span>Smile Colombia <small>/ BOG</small></a>
     <nav aria-label="Principal / Main">
-      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal"><span aria-hidden="true">☰</span><span data-l="es">Menú</span><span data-l="en">Menu</span></button>
+      <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="menu-principal"><svg viewBox="0 0 16 16" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5h12M2 11h12"/></svg><span data-l="es">Menú</span><span data-l="en">Menu</span></button>
       <ul class="menu" id="menu-principal">
         <li><a href="#paquetes"><span data-l="es">Paquetes</span><span data-l="en">Packages</span></a></li>
         <li><a href="#como-funciona"><span data-l="es">Cómo funciona</span><span data-l="en">How it works</span></a></li>
@@ -242,40 +268,49 @@ footer li{margin-bottom:6px}
     </div>
   </div>
 </header>
+<dl class="spec wrap" aria-label="Ficha / Spec">
+  <div><dt><span data-l="es">Proyecto</span><span data-l="en">Project</span></dt><dd>Smile Colombia</dd></div>
+  <div><dt><span data-l="es">Destino</span><span data-l="en">Destination</span></dt><dd>Bogotá, CO</dd></div>
+  <div><dt><span data-l="es">Modelo</span><span data-l="en">Model</span></dt><dd><span data-l="es">Coordinación · mandato</span><span data-l="en">Coordination · mandate</span></dd></div>
+  <div><dt><span data-l="es">Estado</span><span data-l="en">Status</span></dt><dd><span data-l="es">MVP en validación</span><span data-l="en">MVP in validation</span></dd></div>
+</dl>
 
 <main id="main">
 
 <!-- HERO -->
 <section class="hero" id="inicio">
   <div class="wrap hero-grid">
-    <div>
+    <div class="hero-title">
       <span class="eyebrow"><span data-l="es">Para colombianos que viven en el exterior</span><span data-l="en">For people living abroad</span></span>
       <h1>
         <span data-l="es">Tu tratamiento dental en Colombia, con plan escrito antes de comprar tiquetes</span>
         <span data-l="en">Your dental treatment in Colombia, with a written plan before you book flights</span>
       </h1>
+    </div>
+    <div class="hero-main">
       <p class="lead">
         <span data-l="es">Ortodoncia y odontología general en Bogotá. Envíanos fotos (correo o WhatsApp cuando esté activo) y recibe tu plan y precio orientativo, con un objetivo de 48 horas hábiles desde que tengamos tus fotos completas. Aprovecha el viaje que ya tienes planeado.</span>
         <span data-l="en">Orthodontics and general dentistry in Bogotá. Send us photos (email, or WhatsApp when active) and get your plan and estimated price, with a target of 48 business hours from receiving your complete photos. Make the most of the trip you already have planned.</span>
       </p>
       <div class="ctas">
         <a class="btn btn-wa wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener">
-          <svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
+          <svg class="wa" viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
           <span data-l="es">Quiero mi valoración por correo</span><span data-l="en">Get my assessment by email</span>
         <span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
-        <a class="btn btn-ghost" href="#paquetes"><span data-l="es">Ver paquetes</span><span data-l="en">See packages</span></a>
+        <a class="btn btn-ghost" href="#paquetes"><span data-l="es">Ver paquetes</span><span data-l="en">See packages</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></a>
       </div>
       <small>
         <span data-l="es">Valoración por fotos sin costo y sin compromiso. Precios orientativos: el precio final se confirma en la consulta presencial.</span>
         <span data-l="en">Photo assessment at no cost and with no commitment. Prices are estimates: the final price is confirmed at your in-person visit.</span>
       </small>
     </div>
-    <aside class="hero-card" aria-label="Resumen / Summary">
+    <aside class="hero-card frame" aria-label="Resumen / Summary">
+      <span class="mono"><span data-l="es">Ficha del servicio</span><span data-l="en">Service sheet</span></span>
       <ul>
-        <li><span class="check" aria-hidden="true">✓</span><span><span data-l="es"><b>Plan escrito, objetivo de 48 h hábiles,</b> con tratamiento, días de estadía y precio orientativo.</span><span data-l="en"><b>Written plan, target of 48 business hours,</b> with treatment, length of stay and estimated price.</span></span></li>
-        <li><span class="check" aria-hidden="true">✓</span><span><span data-l="es"><b>Odontólogos con registro que puedes consultar</b> en ReTHUS y consultorio en REPS: te damos los números para que los verifiques tú. (registros pendientes de verificación)</span><span data-l="en"><b>Dentists whose license you can look up</b> in ReTHUS and a clinic in REPS, Colombia's official provider registry: we give you the numbers to check yourself. (registration numbers pending verification)</span></span></li>
-        <li><span class="check" aria-hidden="true">✓</span><span><span data-l="es"><b>Precios desglosados:</b> recaudamos el tratamiento a nombre de la clínica, que lo factura; nuestra tarifa de coordinación es fija, aparte y con IVA.</span><span data-l="en"><b>Itemized pricing:</b> we collect the treatment price on behalf of the clinic, which invoices it; our coordination fee is fixed, separate and subject to VAT.</span></span></li>
-        <li><span class="check" aria-hidden="true">✓</span><span><span data-l="es"><b>Acompañamiento por WhatsApp</b> antes, durante y después de tu viaje.</span><span data-l="en"><b>WhatsApp support</b> before, during and after your trip.</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Plan escrito, objetivo de 48 h hábiles,</b> con tratamiento, días de estadía y precio orientativo.</span><span data-l="en"><b>Written plan, target of 48 business hours,</b> with treatment, length of stay and estimated price.</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Odontólogos con registro que puedes consultar</b> en ReTHUS y consultorio en REPS: te damos los números para que los verifiques tú. (registros pendientes de verificación)</span><span data-l="en"><b>Dentists whose license you can look up</b> in ReTHUS and a clinic in REPS, Colombia's official provider registry: we give you the numbers to check yourself. (registration numbers pending verification)</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Precios desglosados:</b> recaudamos el tratamiento a nombre de la clínica, que lo factura; nuestra tarifa de coordinación es fija, aparte y con IVA.</span><span data-l="en"><b>Itemized pricing:</b> we collect the treatment price on behalf of the clinic, which invoices it; our coordination fee is fixed, separate and subject to VAT.</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Acompañamiento por WhatsApp</b> antes, durante y después de tu viaje.</span><span data-l="en"><b>WhatsApp support</b> before, during and after your trip.</span></span></li>
       </ul>
     </aside>
   </div>
@@ -294,15 +329,15 @@ footer li{margin-bottom:6px}
 <!-- PAQUETES -->
 <section id="paquetes">
   <div class="wrap">
-    <div class="center">
+    <div class="sec-head"><span class="num" aria-hidden="true">01</span><div>
       <span class="eyebrow"><span data-l="es">Paquetes</span><span data-l="en">Packages</span></span>
       <h2><span data-l="es">Tres formas de aprovechar tu viaje</span><span data-l="en">Three ways to make the most of your trip</span></h2>
       <p class="lead"><span data-l="es">Precios "desde" en dólares. Tu plan final depende de la valoración del odontólogo.</span><span data-l="en">"From" prices in US dollars. Your final plan depends on the dentist's assessment.</span></p>
-    </div>
+    </div></div>
 
     <div class="cards">
       <!-- Paquete 3 primero: puerta de entrada -->
-      <article class="card">
+      <article class="card frame">
         <span class="tag"><span data-l="es">Para empezar</span><span data-l="en">Start here</span></span>
         <h3><span data-l="es">Chequeo integral + plan</span><span data-l="en">Full check-up + plan</span></h3>
         <p><span data-l="es">Sabe exactamente qué necesitas y cuánto cuesta, para decidir con calma.</span><span data-l="en">Know exactly what you need and what it costs, so you can decide calmly.</span></p>
@@ -315,10 +350,10 @@ footer li{margin-bottom:6px}
           <li><span data-l="es">Plan de tratamiento escrito con presupuesto</span><span data-l="en">Written treatment plan with quote</span></li>
         </ul>
         <p class="no"><span data-l="es">No incluye: vuelos, alojamiento ni los tratamientos del plan.</span><span data-l="en">Not included: flights, lodging or the treatments in the plan.</span></p>
-        <a class="btn btn-wa wa-link" data-pkg="chequeo" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Consultar este paquete</span><span data-l="en">Ask about this package</span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
+        <a class="btn btn-wa wa-link" data-pkg="chequeo" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Consultar este paquete</span><span data-l="en">Ask about this package</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
       </article>
 
-      <article class="card featured">
+      <article class="card featured frame">
         <span class="tag"><span data-l="es">Ideal si viajas seguido</span><span data-l="en">If you travel often</span></span>
         <h3><span data-l="es">Ortodoncia diáspora</span><span data-l="en">Orthodontics for travelers</span></h3>
         <p><span data-l="es">Inicia tu ortodoncia en un viaje y haz los controles en los viajes que ya tienes planeados.</span><span data-l="en">Start your orthodontic treatment on one trip and do check-ups on trips you already have planned.</span></p>
@@ -331,10 +366,10 @@ footer li{margin-bottom:6px}
           <li><span data-l="es">Seguimiento remoto cuando tu caso lo permita</span><span data-l="en">Remote follow-up when your case allows it</span></li>
         </ul>
         <p class="no"><span data-l="es">No incluye: vuelos, alojamiento, retenedores o fases adicionales no previstas en el plan.</span><span data-l="en">Not included: flights, lodging, retainers or extra phases not in the plan.</span></p>
-        <a class="btn btn-wa wa-link" data-pkg="ortodoncia" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Consultar este paquete</span><span data-l="en">Ask about this package</span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
+        <a class="btn btn-wa wa-link" data-pkg="ortodoncia" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Consultar este paquete</span><span data-l="en">Ask about this package</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
       </article>
 
-      <article class="card">
+      <article class="card frame">
         <span class="tag"><span data-l="es">Viaje corto</span><span data-l="en">Short trip</span></span>
         <h3><span data-l="es">Sonrisa express</span><span data-l="en">Express smile</span></h3>
         <p><span data-l="es">Para verte y sentirte mejor en pocos días de viaje.</span><span data-l="en">Look and feel better in just a few days.</span></p>
@@ -347,7 +382,7 @@ footer li{margin-bottom:6px}
           <li><span data-l="es">Resinas o carillas en resina, según tu caso</span><span data-l="en">Composite fillings or composite veneers, depending on your case</span></li>
         </ul>
         <p class="no"><span data-l="es">No incluye: vuelos, alojamiento ni tratamientos adicionales detectados en la valoración.</span><span data-l="en">Not included: flights, lodging or extra treatments found during the assessment.</span></p>
-        <a class="btn btn-wa wa-link" data-pkg="express" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Consultar este paquete</span><span data-l="en">Ask about this package</span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
+        <a class="btn btn-wa wa-link" data-pkg="express" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Consultar este paquete</span><span data-l="en">Ask about this package</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
       </article>
     </div>
 
@@ -359,12 +394,12 @@ footer li{margin-bottom:6px}
 </section>
 
 <!-- CÓMO FUNCIONA -->
-<section class="alt" id="como-funciona">
+<section id="como-funciona">
   <div class="wrap">
-    <div class="center">
+    <div class="sec-head"><span class="num" aria-hidden="true">02</span><div>
       <span class="eyebrow"><span data-l="es">Cómo funciona</span><span data-l="en">How it works</span></span>
       <h2><span data-l="es">De tus fotos a tu sonrisa, en 5 pasos</span><span data-l="en">From your photos to your smile, in 5 steps</span></h2>
-    </div>
+    </div></div>
     <ol class="steps">
       <li>
         <h3><span data-l="es">Escríbenos</span><span data-l="en">Message us</span></h3>
@@ -389,7 +424,7 @@ footer li{margin-bottom:6px}
     </ol>
 
     <div class="model">
-      <div>
+      <div class="frame">
         <h3><span data-l="es">¿Qué pagas y a quién?</span><span data-l="en">What do you pay, and to whom?</span></h3>
         <p><span data-l="es"><b>Un solo pago a Smile Colombia, desglosado:</b></span><span data-l="en"><b>One payment to Smile Colombia, itemized:</b></span></p>
         <ul>
@@ -411,51 +446,55 @@ footer li{margin-bottom:6px}
 
 <!-- GARANTÍA -->
 <section id="garantia">
-  <div class="wrap two">
-    <div>
+  <div class="wrap">
+    <div class="sec-head"><span class="num" aria-hidden="true">03</span><div>
       <span class="eyebrow"><span data-l="es">Garantía y confianza</span><span data-l="en">Guarantee &amp; trust</span></span>
       <h2><span data-l="es">Todo por escrito, antes y después</span><span data-l="en">Everything in writing, before and after</span></h2>
+    </div></div>
+  <div class="two">
+    <div>
       <ul class="list-check">
-        <li><span class="check" aria-hidden="true">✓</span><span><span data-l="es"><b>Plan escrito antes de viajar:</b> tratamiento, número de citas, días de estadía y precio orientativo.</span><span data-l="en"><b>Written plan before you travel:</b> treatment, number of visits, length of stay and estimated price.</span></span></li>
-        <li><span class="check" aria-hidden="true">✓</span><span><span data-l="es"><b>Garantía escrita del odontólogo:</b> La define y firma por escrito el odontólogo tratante (detalle pendiente de firmar) (pendiente firmar)</span><span data-l="en"><b>Written guarantee from the dentist:</b> La define y firma por escrito el odontólogo tratante (detalle pendiente de firmar) (pending signature)</span></span></li>
-        <li><span class="check" aria-hidden="true">✓</span><span><span data-l="es"><b>Consentimiento informado</b> en español o inglés, firmado con tu odontólogo, que te explica beneficios y riesgos.</span><span data-l="en"><b>Informed consent</b> in Spanish or English, signed with your dentist, explaining benefits and risks.</span></span></li>
-        <li><span class="check" aria-hidden="true">✓</span><span><span data-l="es"><b>Tu historia clínica y radiografías</b> se te entregan al finalizar, para que cualquier odontólogo en tu país pueda continuar.</span><span data-l="en"><b>Your clinical records and X-rays</b> are handed to you at the end, so any dentist back home can follow up.</span></span></li>
-        <li><span class="check" aria-hidden="true">✓</span><span><span data-l="es"><b>Si algo no está bien después de volver:</b> Según la garantía escrita del odontólogo: revisión remota y, si aplica, cita de control en el siguiente viaje a Colombia (pendiente firmar)</span><span data-l="en"><b>If something isn't right after you return:</b> Según la garantía escrita del odontólogo: revisión remota y, si aplica, cita de control en el siguiente viaje a Colombia (pendiente firmar)</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Plan escrito antes de viajar:</b> tratamiento, número de citas, días de estadía y precio orientativo.</span><span data-l="en"><b>Written plan before you travel:</b> treatment, number of visits, length of stay and estimated price.</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Garantía escrita del odontólogo:</b> La define y firma por escrito el odontólogo tratante (detalle pendiente de firmar) (pendiente firmar)</span><span data-l="en"><b>Written guarantee from the dentist:</b> La define y firma por escrito el odontólogo tratante (detalle pendiente de firmar) (pending signature)</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Consentimiento informado</b> en español o inglés, firmado con tu odontólogo, que te explica beneficios y riesgos.</span><span data-l="en"><b>Informed consent</b> in Spanish or English, signed with your dentist, explaining benefits and risks.</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Tu historia clínica y radiografías</b> se te entregan al finalizar, para que cualquier odontólogo en tu país pueda continuar.</span><span data-l="en"><b>Your clinical records and X-rays</b> are handed to you at the end, so any dentist back home can follow up.</span></span></li>
+        <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Si algo no está bien después de volver:</b> Según la garantía escrita del odontólogo: revisión remota y, si aplica, cita de control en el siguiente viaje a Colombia (pendiente firmar)</span><span data-l="en"><b>If something isn't right after you return:</b> Según la garantía escrita del odontólogo: revisión remota y, si aplica, cita de control en el siguiente viaje a Colombia (pendiente firmar)</span></span></li>
       </ul>
-      <p style="font-size:.9rem;color:var(--muted)"><span data-l="es">Ningún tratamiento garantiza un resultado específico; tu odontólogo te explicará qué esperar en tu caso.</span><span data-l="en">No treatment can guarantee a specific result; your dentist will explain what to expect in your case.</span></p>
+      <p class="aside-note"><span data-l="es">Ningún tratamiento garantiza un resultado específico; tu odontólogo te explicará qué esperar en tu caso.</span><span data-l="en">No treatment can guarantee a specific result; your dentist will explain what to expect in your case.</span></p>
     </div>
     <div>
       <h3><span data-l="es">Nuestros odontólogos</span><span data-l="en">Our dentists</span></h3>
-      <p style="color:var(--muted);font-size:.95rem"><span data-l="es">Puedes verificar a cada profesional en ReTHUS y el consultorio en el REPS del Ministerio de Salud de Colombia. (pendiente verificación)</span><span data-l="en">You can verify each professional in ReTHUS and the clinic in REPS, both run by Colombia's Ministry of Health. (pending verification)</span></p>
+      <p class="aside-note"><span data-l="es">Puedes verificar a cada profesional en ReTHUS y el consultorio en el REPS del Ministerio de Salud de Colombia. (pendiente verificación)</span><span data-l="en">You can verify each professional in ReTHUS and the clinic in REPS, both run by Colombia's Ministry of Health. (pending verification)</span></p>
       <div class="team">
         <div class="member">
-          <div class="avatar" aria-hidden="true">🦷</div>
+          <div class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7 .5 3 1 6.5 2.5 6.5S9.5 17 12 17s3 4 4.5 4 2-3.5 2.5-6.5c.5-2.5 2-4 2-7C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3Z"/></svg></div>
           <b>Pendiente verificación</b>
           <small><span data-l="es">Ortodoncista</span><span data-l="en">Orthodontist</span></small>
           <small><span data-l="es">Registro profesional:</span><span data-l="en">License no.:</span> Pendiente verificación</small>
         </div>
         <div class="member">
-          <div class="avatar" aria-hidden="true">🦷</div>
+          <div class="avatar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M7 3c-2.5 0-4 2-4 4.5 0 3 1.5 4.5 2 7 .5 3 1 6.5 2.5 6.5S9.5 17 12 17s3 4 4.5 4 2-3.5 2.5-6.5c.5-2.5 2-4 2-7C21 5 19.5 3 17 3c-2 0-3 1-5 1S9 3 7 3Z"/></svg></div>
           <b>Pendiente verificación</b>
           <small><span data-l="es">Odontología general</span><span data-l="en">General dentist</span></small>
           <small><span data-l="es">Registro profesional:</span><span data-l="en">License no.:</span> Pendiente verificación</small>
         </div>
       </div>
-      <p style="font-size:.9rem;color:var(--muted);margin-top:14px">
+      <p class="aside-note" style="margin-top:var(--s4)">
         <span data-l="es">Consultorio: Clínica aliada (pendiente verificación) · Pendiente verificación, Bogotá · Código REPS: Pendiente verificación · NIT Pendiente verificación. Presta y factura el tratamiento; Smile Colombia lo recauda como mandataria.</span>
         <span data-l="en">Clinic: Clínica aliada (pendiente verificación) · Pendiente verificación, Bogotá · REPS code: Pendiente verificación · Tax ID Pendiente verificación. Provides and invoices treatment; Smile Colombia collects it as its agent.</span>
       </p>
     </div>
   </div>
+  </div>
 </section>
 
 <!-- FAQ -->
-<section class="alt" id="faq">
+<section id="faq">
   <div class="wrap">
-    <div class="center">
+    <div class="sec-head"><span class="num" aria-hidden="true">04</span><div>
       <span class="eyebrow"><span data-l="es">Preguntas frecuentes</span><span data-l="en">FAQ</span></span>
       <h2><span data-l="es">Lo que más nos preguntan</span><span data-l="en">What people ask us most</span></h2>
-    </div>
+    </div></div>
     <div class="faq">
       <details>
         <summary><span data-l="es">¿La valoración por fotos tiene costo?</span><span data-l="en">Does the photo assessment cost anything?</span></summary>
@@ -499,16 +538,20 @@ footer li{margin-bottom:6px}
 
 <!-- CTA FINAL -->
 <section class="cta">
-  <div class="wrap">
+  <div class="wrap cta-grid">
+    <div>
+    <span class="eyebrow" style="color:var(--on-accent)">→ <span data-l="es">Siguiente paso</span><span data-l="en">Next step</span></span>
     <h2><span data-l="es">¿Viajas pronto a Colombia?</span><span data-l="en">Traveling to Colombia soon?</span></h2>
-    <p class="lead center" style="margin:0 auto 24px"><span data-l="es">Escríbenos hoy y ten tu plan antes de comprar tiquetes.</span><span data-l="en">Message us today and have your plan before you book flights.</span></p>
-    <a class="btn btn-wa wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Escríbenos por correo</span><span data-l="en">Email us</span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
+    <p class="lead"><span data-l="es">Escríbenos hoy y ten tu plan antes de comprar tiquetes.</span><span data-l="en">Message us today and have your plan before you book flights.</span></p>
+    </div>
+    <a class="btn btn-wa wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" target="_blank" rel="noopener"><span data-l="es">Escríbenos por correo</span><span data-l="en">Email us</span><span class="ico" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span><span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
   </div>
 </section>
 
 <!-- PRIVACIDAD (Ley 1581 de 2012) -->
 <section class="privacy" id="privacidad">
-  <div class="wrap privacy-box">
+  <div class="wrap">
+    <div class="sec-head"><span class="num" aria-hidden="true">05</span><div class="privacy-box">
     <span class="eyebrow"><span data-l="es">Tratamiento de datos personales</span><span data-l="en">Personal data processing</span></span>
     <div data-l="es">
       <h2>Aviso de privacidad</h2>
@@ -558,6 +601,7 @@ footer li{margin-bottom:6px}
       <h3>Full policy</h3>
       <p>Our full data processing policy is available at <a href="privacidad.html">privacidad.html</a> or on request at contacto@smilecolombia.co. This site has no forms of its own and uses no cookies of any kind; it only stores your language preference in your browser's local storage (localStorage), which you can clear at any time; Smile Colombia never publishes patient photos or testimonials without written consent.</p>
     </div>
+  </div></div>
   </div>
 </section>
 
@@ -565,6 +609,7 @@ footer li{margin-bottom:6px}
 
 <footer>
   <div class="wrap">
+    <p class="foot-word" aria-hidden="true">Smile<br>Colombia<span>+</span></p>
     <div class="foot">
       <div>
         <h4>Smile Colombia</h4>
@@ -594,8 +639,8 @@ footer li{margin-bottom:6px}
   </div>
 </footer>
 
-<a class="wa-float wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" title="Contacto" title="Contacto"><span class="sr-only"><span data-l="es">Contacto por correo</span><span data-l="en">Email contact</span></span>
-  <svg viewBox="0 0 24 24" aria-hidden="true" fill="#fff"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
+<a class="wa-float wa-link" href="mailto:contacto@smilecolombia.co?subject=Smile%20Colombia" title="Contacto"><span class="sr-only"><span data-l="es">Contacto por correo</span><span data-l="en">Email contact</span></span>
+  <span class="lbl" aria-hidden="true"><span data-l="es">Contacto</span><span data-l="en">Contact</span></span><svg viewBox="0 0 24 24" aria-hidden="true" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 0 0 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.1 5.1 0 0 0 1.1 2.7 11.7 11.7 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.7-1.2 2.2 2.2 0 0 0 .2-1.2c-.1-.1-.3-.2-.5-.3Z"/></svg>
 <span class="sr-only"><span data-l="es"> (se abre en una pestaña nueva)</span><span data-l="en"> (opens in a new tab)</span></span></a>
 
 <script>
@@ -677,6 +722,22 @@ footer li{margin-bottom:6px}
     menu.addEventListener("click", function(e){ if (e.target.closest("a")) closeMenu(false); });
     document.addEventListener("keydown", function(e){
       if (e.key === "Escape" && toggle.getAttribute("aria-expanded") === "true") closeMenu(true);
+    });
+  }
+  // Titular palabra por palabra (respeta prefers-reduced-motion vía CSS)
+  if (!(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
+    document.querySelectorAll(".hero h1 [data-l]").forEach(function(el){
+      var words = el.textContent.trim().split(/\s+/);
+      el.textContent = "";
+      el.setAttribute("aria-label", words.join(" "));
+      words.forEach(function(w, i){
+        var sp = document.createElement("span");
+        sp.className = "w"; sp.setAttribute("aria-hidden","true");
+        sp.style.animationDelay = (i * 60) + "ms";
+        sp.textContent = w;
+        el.appendChild(sp);
+        if (i < words.length - 1) el.appendChild(document.createTextNode(" "));
+      });
     });
   }
   document.getElementById("year").textContent = new Date().getFullYear();
