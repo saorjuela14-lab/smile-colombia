@@ -22,8 +22,8 @@
 <style>
 :root{
   /* Tokens v2 — 1 neutro + 1 acento */
-  --bone:#F2F0EB; --paper:#FAF9F6; --ink:#151413; --muted:#58554F; --rule:#151413; --hair:#CFCBC2;
-  --accent:#C43D0E; --accent-ink:#A33208; --on-accent:#FFFFFF; --focus:#151413;
+  --bone:#F4F2ED; --paper:#FBFAF7; --ink:#161514; --muted:#56524C; --rule:#161514; --hair:#CFCBC2;
+  --accent:#B23B0C; --accent-ink:#9A3209; --on-accent:#FFFFFF; --focus:#161514; --leaf:#2F5E3F;
   --font-display:"Archivo","Arial Narrow",Arial,sans-serif;
   --font-body:"Archivo",Arial,sans-serif;
   --font-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
@@ -237,6 +237,37 @@ footer li{margin-bottom:var(--s2)}
   .wa-float .lbl{display:none}
 }
 @media (prefers-reduced-motion:reduce){.hero h1 .w{opacity:1;transform:none;animation:none}}
+
+/* v3: fotos ilustrativas en la retícula (marco fino + marcas "+", sin sombras) */
+.photo{margin:0;position:relative;border:var(--bw) solid var(--rule);background:var(--paper)}
+.photo::before,.photo::after{content:"+";position:absolute;z-index:2;font-family:var(--font-mono);font-size:16px;line-height:1;color:var(--ink);background:var(--bone);padding:0 2px}
+.photo::before{top:-9px;left:-7px}
+.photo::after{bottom:-9px;right:-7px}
+.photo picture{display:block}
+.photo img{display:block;width:100%}
+.photo img{object-fit:cover;height:auto;aspect-ratio:var(--ar,3/2)}
+.photo figcaption{display:flex;justify-content:space-between;gap:var(--s3);flex-wrap:wrap;border-top:var(--bw) solid var(--rule);padding:var(--s2) var(--s3);font-family:var(--font-mono);font-size:var(--t-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--paper)}
+.photo figcaption b{color:var(--ink);font-weight:700}
+.hero-side{display:flex;flex-direction:column;gap:var(--s6);margin:0 0 var(--s8) var(--s6)}
+.hero-side .hero-card{margin:0}
+.hero-side .photo img{aspect-ratio:auto;height:460px;object-position:50% 30%}
+.card.featured .photo{border-color:var(--bone);margin:0 0 var(--s5)}
+.card.featured .photo::before,.card.featured .photo::after{background:var(--ink);color:var(--bone)}
+.card.featured .photo figcaption{background:var(--ink);color:#C9C5BC;border-color:var(--bone)}
+.card.featured .photo figcaption b{color:var(--bone)}
+.trip{display:grid;grid-template-columns:4fr 5fr 3fr;gap:var(--s5);margin:var(--s7) 0 var(--s7);align-items:start}
+.trip .photo img{aspect-ratio:auto;height:340px}
+.cta .photo{border-color:var(--on-accent);margin-bottom:var(--s7)}
+.cta .photo::before,.cta .photo::after{background:var(--accent);color:var(--on-accent)}
+.cta .photo img{aspect-ratio:8/3}
+.cta .photo figcaption{background:var(--ink);color:#C9C5BC;border-color:var(--on-accent)}
+.cta .photo figcaption b{color:var(--bone)}
+.check{border-color:var(--leaf);color:var(--leaf)}
+.credits{border-top:var(--bw) solid #3A3835;margin-top:var(--s6);padding-top:var(--s4);font-size:var(--t-sm)}
+.credits h4{font-family:var(--font-mono);font-size:var(--t-mono);letter-spacing:.06em;font-weight:700;font-stretch:100%;font-variation-settings:"wdth" 100;color:var(--bone);margin-bottom:var(--s3)}
+.credits ul{list-style:none;padding:0;margin:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--s2) var(--s5)}
+.credits p{margin:var(--s3) 0 0}
+@media (max-width:900px){.hero-side{margin:0 0 var(--s7)}.trip{grid-template-columns:1fr}.trip .photo img{height:auto;aspect-ratio:3/2}.cta .photo img{aspect-ratio:2/1}}
 </style>
 </head>
 <body>
@@ -304,6 +335,8 @@ footer li{margin-bottom:var(--s2)}
         <span data-l="en">Photo assessment at no cost and with no commitment. Prices are estimates: the final price is confirmed at your in-person visit.</span>
       </small>
     </div>
+    <div class="hero-side">
+    <figure class="photo" style="--ar:4/5"><picture><source srcset="img/hero-sonrisa-brackets.webp" type="image/webp"><img src="img/hero-sonrisa-brackets.jpg" width="960" height="1200" fetchpriority="high" decoding="async" alt="Mujer sonriendo con brackets metálicos, a la luz del sol (foto ilustrativa de stock, no es una paciente)" data-alt-es="Mujer sonriendo con brackets metálicos, a la luz del sol (foto ilustrativa de stock, no es una paciente)" data-alt-en="Woman smiling with metal braces in sunlight (illustrative stock photo, not a patient)"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Sonrisa con brackets</span><span data-l="en">Smile with braces</span></span><span>Polina / Pexels</span></figcaption></figure>
     <aside class="hero-card frame" aria-label="Resumen / Summary">
       <span class="mono"><span data-l="es">Ficha del servicio</span><span data-l="en">Service sheet</span></span>
       <ul>
@@ -313,6 +346,7 @@ footer li{margin-bottom:var(--s2)}
         <li><span class="check" aria-hidden="true"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 8.5l3.2 3L13 4.5"/></svg></span><span><span data-l="es"><b>Acompañamiento por WhatsApp</b> antes, durante y después de tu viaje.</span><span data-l="en"><b>WhatsApp support</b> before, during and after your trip.</span></span></li>
       </ul>
     </aside>
+    </div>
   </div>
 </section>
 
@@ -342,7 +376,7 @@ footer li{margin-bottom:var(--s2)}
         <h3><span data-l="es">Chequeo integral + plan</span><span data-l="en">Full check-up + plan</span></h3>
         <p><span data-l="es">Sabe exactamente qué necesitas y cuánto cuesta, para decidir con calma.</span><span data-l="en">Know exactly what you need and what it costs, so you can decide calmly.</span></p>
         <p class="price"><span data-l="es">Tratamiento desde</span><span data-l="en">Treatment from</span><b>USD 120</b><span>Ref. COP 480.000</span></p>
-        <p class="fee"><span data-l="es">+ coordinación USD 150 + IVA 19 % · Estadía: 1 día(s)</span><span data-l="en">+ coordination USD 150 + 19% VAT · Stay: 3–5 day(s)</span></p>
+        <p class="fee"><span data-l="es">+ coordinación USD 150 + IVA 19 % · Estadía: 1–2 días, según valoración</span><span data-l="en">+ coordination USD 150 + 19% VAT · Stay: 1–2 days, subject to assessment</span></p>
         <ul>
           <li><span data-l="es">Examen odontológico completo</span><span data-l="en">Complete dental exam</span></li>
           <li><span data-l="es">Radiografías</span><span data-l="en">X-rays</span></li>
@@ -355,10 +389,11 @@ footer li{margin-bottom:var(--s2)}
 
       <article class="card featured frame">
         <span class="tag"><span data-l="es">Ideal si viajas seguido</span><span data-l="en">If you travel often</span></span>
+        <figure class="photo" style="--ar:3/2"><picture><source srcset="img/ortodoncia-brackets.webp" type="image/webp"><img src="img/ortodoncia-brackets.jpg" width="1200" height="800" loading="lazy" decoding="async" alt="Primer plano de un control de ortodoncia con brackets y espejo dental (foto ilustrativa de stock)" data-alt-es="Primer plano de un control de ortodoncia con brackets y espejo dental (foto ilustrativa de stock)" data-alt-en="Close-up of an orthodontic check with braces and a dental mirror (illustrative stock photo)"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Control de ortodoncia</span><span data-l="en">Orthodontic check</span></span><span>cottonbro studio / Pexels</span></figcaption></figure>
         <h3><span data-l="es">Ortodoncia diáspora</span><span data-l="en">Orthodontics for travelers</span></h3>
         <p><span data-l="es">Inicia tu ortodoncia en un viaje y haz los controles en los viajes que ya tienes planeados.</span><span data-l="en">Start your orthodontic treatment on one trip and do check-ups on trips you already have planned.</span></p>
         <p class="price"><span data-l="es">Tratamiento desde</span><span data-l="en">Treatment from</span><b>USD 2.000</b><span>Ref. COP 8.000.000</span></p>
-        <p class="fee"><span data-l="es">+ coordinación USD 150 + IVA 19 % · Instalación: 3–5 días</span><span data-l="en">+ coordination USD 150 + 19% VAT · Placement: 1 days</span></p>
+        <p class="fee"><span data-l="es">+ coordinación USD 150 + IVA 19 % · Instalación: 2–4 días, según valoración</span><span data-l="en">+ coordination USD 150 + 19% VAT · Placement: 2–4 days, subject to assessment</span></p>
         <ul>
           <li><span data-l="es">Valoración y estudios de ortodoncia</span><span data-l="en">Orthodontic assessment and records</span></li>
           <li><span data-l="es">Instalación (brackets o alineadores, según tu caso)</span><span data-l="en">Placement (braces or aligners, depending on your case)</span></li>
@@ -374,7 +409,7 @@ footer li{margin-bottom:var(--s2)}
         <h3><span data-l="es">Sonrisa express</span><span data-l="en">Express smile</span></h3>
         <p><span data-l="es">Para verte y sentirte mejor en pocos días de viaje.</span><span data-l="en">Look and feel better in just a few days.</span></p>
         <p class="price"><span data-l="es">Tratamiento desde</span><span data-l="en">Treatment from</span><b>USD 450</b><span>Ref. COP 1.800.000</span></p>
-        <p class="fee"><span data-l="es">+ coordinación USD 150 + IVA 19 % · Estadía: 3–5 días</span><span data-l="en">+ coordination USD 150 + 19% VAT · Stay: 3–5 days</span></p>
+        <p class="fee"><span data-l="es">+ coordinación USD 150 + IVA 19 % · Estadía: 2–4 días, según valoración</span><span data-l="en">+ coordination USD 150 + 19% VAT · Stay: 2–4 days, subject to assessment</span></p>
         <ul>
           <li><span data-l="es">Valoración</span><span data-l="en">Assessment</span></li>
           <li><span data-l="es">Limpieza</span><span data-l="en">Cleaning</span></li>
@@ -422,6 +457,8 @@ footer li{margin-bottom:var(--s2)}
         <p><span data-l="es">Te tratas en Bogotá, te llevas tu historia clínica y seguimos en contacto a los 7, 30 y 90 días.</span><span data-l="en">Get treated in Bogotá, take your records home and we check in at 7, 30 and 90 days.</span></p>
       </li>
     </ol>
+
+    <div class="trip"><figure class="photo"><picture><source srcset="img/consultorio-dental.webp" type="image/webp"><img src="img/consultorio-dental.jpg" width="960" height="720" loading="lazy" decoding="async" alt="Sillón odontológico y equipos en un consultorio, en blanco y negro (foto ilustrativa, no es nuestra clínica aliada)" data-alt-es="Sillón odontológico y equipos en un consultorio, en blanco y negro (foto ilustrativa, no es nuestra clínica aliada)" data-alt-en="Dental chair and equipment in a clinic, black and white (illustrative photo, not our partner clinic)"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Consultorio</span><span data-l="en">Dental clinic</span></span><span>Werapinthorn Jaijan / Unsplash</span></figcaption></figure><figure class="photo"><picture><source srcset="img/bogota-monserrate.webp" type="image/webp"><img src="img/bogota-monserrate.jpg" width="1280" height="720" loading="lazy" decoding="async" alt="Vista aérea de Bogotá con los cerros orientales al fondo" data-alt-es="Vista aérea de Bogotá con los cerros orientales al fondo" data-alt-en="Aerial view of Bogotá with the eastern hills behind it"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Bogotá</span><span data-l="en">Bogotá</span></span><span>Juan Camilo Trujillo Botero / Pexels</span></figcaption></figure><figure class="photo"><picture><source srcset="img/cartagena-calle.webp" type="image/webp"><img src="img/cartagena-calle.jpg" width="720" height="900" loading="lazy" decoding="async" alt="Calle colonial de Cartagena con casas de colores y buganvilias rosadas" data-alt-es="Calle colonial de Cartagena con casas de colores y buganvilias rosadas" data-alt-en="Colonial street in Cartagena with colorful houses and pink bougainvillea"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Cartagena</span><span data-l="en">Cartagena</span></span><span>Juan Nino / Unsplash</span></figcaption></figure></div>
 
     <div class="model">
       <div class="frame">
@@ -538,6 +575,7 @@ footer li{margin-bottom:var(--s2)}
 
 <!-- CTA FINAL -->
 <section class="cta">
+  <div class="wrap"><figure class="photo" style="--ar:8/3"><picture><source srcset="img/eje-cafetero-cocora.webp" type="image/webp"><img src="img/eje-cafetero-cocora.jpg" width="1600" height="600" loading="lazy" decoding="async" alt="Valle de Cocora, en el Eje Cafetero, con palmas de cera entre montañas verdes y neblina" data-alt-es="Valle de Cocora, en el Eje Cafetero, con palmas de cera entre montañas verdes y neblina" data-alt-en="Cocora Valley in Colombia’s coffee region, with wax palms among misty green hills"></picture><figcaption><span><b><span data-l="es">Foto ilustrativa</span><span data-l="en">Illustrative photo</span></b> · <span data-l="es">Valle de Cocora, Eje Cafetero</span><span data-l="en">Cocora Valley, coffee region</span></span><span>Jess Londoño / Pexels</span></figcaption></figure></div>
   <div class="wrap cta-grid">
     <div>
     <span class="eyebrow" style="color:var(--on-accent)">→ <span data-l="es">Siguiente paso</span><span data-l="en">Next step</span></span>
@@ -636,6 +674,7 @@ footer li{margin-bottom:var(--s2)}
       </div>
     </div>
     <p class="legal">© <span id="year">2026</span> Smile Colombia S.A.S. (en constitución) · NIT Pendiente · <span data-l="es">SAS no prestadora de servicios de salud; recauda el valor del tratamiento como mandataria de Clínica aliada (pendiente verificación) (NIT Pendiente verificación, REPS Pendiente verificación).</span><span data-l="en">A non-healthcare SAS company; it collects the treatment price as agent of Clínica aliada (pendiente verificación) (Tax ID Pendiente verificación, REPS Pendiente verificación).</span> <span data-l="es">Precios orientativos sujetos a valoración clínica presencial. La información de este sitio no reemplaza la consulta con un odontólogo.</span><span data-l="en">Prices are estimates subject to an in-person clinical assessment. Information on this site does not replace a consultation with a dentist.</span></p>
+    <div class="credits"><h4><span data-l="es">Créditos de fotos</span><span data-l="en">Photo credits</span></h4><ul><li><a href="https://www.pexels.com/photo/a-woman-smiling-with-braces-on-her-teeth-7090366/" target="_blank" rel="noopener">Polina</a> · <span data-l="es">Sonrisa con brackets</span><span data-l="en">Smile with braces</span> · <a href="https://pexels.com/license/" target="_blank" rel="noopener"><span data-l="es">Licencia Pexels</span><span data-l="en">Pexels License</span></a></li><li><a href="https://www.pexels.com/photo/treating-of-a-teeth-with-braces-6528909/" target="_blank" rel="noopener">cottonbro studio</a> · <span data-l="es">Control de ortodoncia</span><span data-l="en">Orthodontic check</span> · <a href="https://pexels.com/license/" target="_blank" rel="noopener"><span data-l="es">Licencia Pexels</span><span data-l="en">Pexels License</span></a></li><li><a href="https://unsplash.com/photos/dental-chair-with-equipment-in-a-clinic-T5si0dm2dGo" target="_blank" rel="noopener">Werapinthorn Jaijan</a> · <span data-l="es">Consultorio</span><span data-l="en">Dental clinic</span> · <a href="https://unsplash.com/license" target="_blank" rel="noopener"><span data-l="es">Licencia Unsplash</span><span data-l="en">Unsplash License</span></a></li><li><a href="https://www.pexels.com/photo/aerial-view-of-bogota-skyline-with-mountains-31344419/" target="_blank" rel="noopener">Juan Camilo Trujillo Botero</a> · <span data-l="es">Bogotá</span><span data-l="en">Bogotá</span> · <a href="https://pexels.com/license/" target="_blank" rel="noopener"><span data-l="es">Licencia Pexels</span><span data-l="en">Pexels License</span></a></li><li><a href="https://unsplash.com/photos/a-street-lined-with-buildings-and-pink-flowers-lyetwQ_ym3E" target="_blank" rel="noopener">Juan Nino</a> · <span data-l="es">Cartagena</span><span data-l="en">Cartagena</span> · <a href="https://unsplash.com/license" target="_blank" rel="noopener"><span data-l="es">Licencia Unsplash</span><span data-l="en">Unsplash License</span></a></li><li><a href="https://www.pexels.com/photo/palm-trees-between-mountains-valle-de-cocora-columbia-15699902/" target="_blank" rel="noopener">Jess Londoño</a> · <span data-l="es">Valle de Cocora, Eje Cafetero</span><span data-l="en">Cocora Valley, coffee region</span> · <a href="https://pexels.com/license/" target="_blank" rel="noopener"><span data-l="es">Licencia Pexels</span><span data-l="en">Pexels License</span></a></li></ul><p><span data-l="es">Todas son fotos ilustrativas de stock de <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> y <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>: no muestran pacientes, odontólogos ni la clínica aliada de Smile Colombia.</span><span data-l="en">All are illustrative stock photos from <a href="https://unsplash.com" target="_blank" rel="noopener">Unsplash</a> and <a href="https://www.pexels.com" target="_blank" rel="noopener">Pexels</a>: they do not show Smile Colombia patients, dentists or partner clinic.</span></p></div>
   </div>
 </footer>
 
@@ -691,6 +730,9 @@ footer li{margin-bottom:var(--s2)}
     });
     document.querySelectorAll(".wa-link").forEach(function(a){
       a.href = waHref(lang, a.getAttribute("data-pkg"));
+    });
+    document.querySelectorAll("img[data-alt-es]").forEach(function(im){
+      im.alt = im.getAttribute("data-alt-" + lang) || im.alt;
     });
     try { localStorage.setItem("lang", lang); } catch(e){}
   }
